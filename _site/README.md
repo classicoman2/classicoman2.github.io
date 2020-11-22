@@ -36,3 +36,15 @@ Per executar i desplegar localment,
 ### Desplegar remotament
 
     git push
+
+## Fer canvis.
+
+- Podem crear directoris i pàgines markdown, que després podem compilar amb 
+
+    bundle exec jekyll build
+
+I després, feim commit i ho pujam online. 
+
+- Podem crear variables i modificar les bàsiques al fitxer `_config.yml`
+- Podem modificar la plantilla `minima` anant a `vendor/bundle/ruby/2.7.0/gems/minima-2.5.1, afegint-li imatges, variables del fitxer anterior, canviant els estils...
+

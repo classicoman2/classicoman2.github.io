@@ -12,6 +12,9 @@ title:  "DOM"
 - [JavaScript DOM Crash Course - Part 3](https://www.youtube.com/watch?v=wK2cBMcDTss)
 - [JavaScript DOM Crash Course - Part 4](https://www.youtube.com/watch?v=i37KVt_IcXw)
 
+Més informació:
+
+- https://eloquentjavascript.net/14_dom.html
 
 ## 1 Intro [##](https://www.w3schools.com/js/js_htmldom.asp)
 
@@ -35,7 +38,7 @@ Javascript pot emprar l'estructura DOM per a:
 - Exemple de _Mètode_: .getElementById()
 - Exempe de _Propietat_ .innerHTML
 
-## 3\_Mètodes per Localitzar elements [##](https://www.w3schools.com/js/js_htmldom_elements.asp)
+## 3 Mètodes per Localitzar elements [##](https://www.w3schools.com/js/js_htmldom_elements.asp)
 
 Els exemples que veurem en aquest apartat:
 
@@ -152,6 +155,8 @@ Els exemples que veurem en aquest apartat:
 - lastChild
 - nextSibling
 - previousSibling
+
+![Exemple d'ús](./assets/html-links.svg)
 
 #### parentNode
 
