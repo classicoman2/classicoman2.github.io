@@ -7,7 +7,7 @@
 
 Benvinguts a `Classicoman Experience`.
 
-En aquest web trobaràs apunts de les assignatures `Design of Web Interfaces` i `Desenvolupament Web en Entorn Client`
+En aquest web trobaràs apunts de les assignatures `Design of Web Interfaces` i `Desenvolupament Web en Entorn Client` del curs 2020.
 
 ## Desenvolupament Web en Entorn Client
 
