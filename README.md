@@ -48,3 +48,6 @@ I després, feim commit i ho pujam online.
 - Podem crear variables i modificar les bàsiques al fitxer `_config.yml`
 - Podem modificar la plantilla `minima` anant a `vendor/bundle/ruby/2.7.0/gems/minima-2.5.1, afegint-li imatges, variables del fitxer anterior, canviant els estils...
 
+## TODO
+- [ ] Afegir materials
+- [ ] Google Analytics
