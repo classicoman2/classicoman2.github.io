@@ -3,7 +3,6 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 #layout: home    -  xtoni  Per a que no surtin els posts
-layout: page
 ---
 
 Benvinguts a `Classicoman Experience`.

@@ -49,6 +49,10 @@ I després, feim commit i ho pujam online.
 - Podem modificar la plantilla `minima` anant a `vendor/bundle/ruby/2.7.0/gems/minima-2.5.1, afegint-li imatges, variables del fitxer anterior, canviant els estils...
 
 ## TODO
+- [x] Triar tema:
+  - El tema per defecte, `Minima`, no inclou una manera de tenir un nav amb dropdowns (o jo no ho he trobat)
+  - Com canviar tema: fàcil, en 4 passes. Hi ha molts tutorials, per exemple [aquest](https://www.inmotionhosting.com/support/website/jekyll/how-to-change-your-jekyll-theme-with-rubygems/)
+  - Tema triat: [Just the Docs](https://jekyllthemes.io/theme/just-the-docs)
+- [x] Afegir dropdowns a top nav: molt fàcil amb Just the Docs -> a la seva [documentacio](https://pmarsceill.github.io/just-the-docs/docs/navigation-structure/#pages-with-children)
 - [ ] Afegir materials
 - [ ] Google Analytics
-- [ ] Afegir dropdowns a top nav
