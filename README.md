@@ -50,9 +50,9 @@ I després, feim commit i ho pujam online.
 
 ## TODO
 - [x] Triar tema:
-  - El tema per defecte, `Minima`, no inclou una manera de tenir un nav amb dropdowns (o jo no ho he trobat)
+  - El tema per defecte, `Minima`, és molt bàsic.
   - Com canviar tema: fàcil, en 4 passes. Hi ha molts tutorials, per exemple [aquest](https://www.inmotionhosting.com/support/website/jekyll/how-to-change-your-jekyll-theme-with-rubygems/)
-  - Tema triat: [Just the Docs](https://jekyllthemes.io/theme/just-the-docs)
-- [x] Afegir dropdowns a top nav: molt fàcil amb Just the Docs -> a la seva [documentacio](https://pmarsceill.github.io/just-the-docs/docs/navigation-structure/#pages-with-children)
+  - Tema triat: [Just the Docs](https://jekyllthemes.io/theme/just-the-docs) però com no funciona a Github Pages, llavors he triat [Minimal](https://github.com/pages-themes/minimal)
+- [ ] Afegir dropdowns a Minimal, pendent - a Just the Docs era fàcil, explicat [aqui](https://pmarsceill.github.io/just-the-docs/docs/navigation-structure/#pages-with-children)
 - [ ] Afegir materials
 - [ ] Google Analytics

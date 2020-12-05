@@ -26,7 +26,7 @@ github_username:  classicoman2
 markdown: kramdown
 # theme: minima
 # theme: just-the-docs
-theme: jekyll-rtd-theme
+theme: jekyll-theme-minimal
 
 plugins:
   - jekyll-feed

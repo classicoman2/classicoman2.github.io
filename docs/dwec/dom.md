@@ -1,6 +1,5 @@
 ---
 title:  DOM
-parent: DWEC
 #categories: jekyll update
 ---
 # El DOM. Manipulació. Mètodes.
