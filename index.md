@@ -11,5 +11,9 @@ En aquest web trobaràs apunts de les assignatures `Design of Web Interfaces` i 
 
 ## Desenvolupament Web en Entorn Client
 
-- [El DOM](./docs/dwec/dom.html)
-- [Expressions Regulals](./docs/dwec/regexpr.html)
+- 1 - [El DOM](./docs/dwec/dom.html)
+- 2 - [Expressions Regulals](./docs/dwec/regexpr.html)
+
+## Design of Web Interfaces
+
+- 

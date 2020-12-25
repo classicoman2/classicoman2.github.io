@@ -75,7 +75,7 @@ Els exemples que veurem en aquest apartat:
 - Ens permet més flexibilitat i concreció que `getElementsByClassName`
 - La variant `querySelector()` retorna només el primer element que encaixa amb el selector proporcionat
 
-```
+```js
    // Captura tots els <p> que son descendents directes de #wrapper
    let list = document.querySelectorAll("#wrapper2 > p");
    for (l of list) {
@@ -116,7 +116,7 @@ Els exemples que veurem en aquest apartat:
   - Alternar una classe amb `toggle()`: afegir-la i eliminar-la alternativament
   - Consultar si un element té assignada o no una classe amb `contains()`
 
-```
+```js
   //Afegeix la classe .contenedor a l'element #myDiv
   document.getElementById("myDIV").classList.add("contenedor")
 ```
