@@ -55,7 +55,7 @@ Els exemples que veurem en aquest apartat:
 - Ús genèric: document.getElementsByTagName( )
 - Si en lloc de _document_ posam un objecte del DOM, llavors tornarà només els elements amb aquell **tag** a dins d'aquest element del DOM
 
-```js run
+```js
   // capturam tots els elements de tipus <p>
   let pElements = document.getElementsByTagName("p");
   for (p of pElements) {
