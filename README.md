@@ -1,58 +1,43 @@
 # classicoman2.github.io
-Github pages
+Apunts de les assignatures de Grau Superior en Desenvolupament Web. Site desenvolupat amb [Jekyll]()
 
+## Install Jekyll
+To install `jekyll`, ruby and bundler,
+```bash
+sudo apt install jekyll
+```
+To create a Jekyll site inside a folder, 
+```bash
+jekyll new . 
+```
+Using the template [just-the-docs](), change the `gem` file to use this theme and:
+```bash
+bundle install
+```
+
+### Deploy locally
+```bash
+bundle exec jekyll serve
+```
+### Create dist version (build)
+```bash
+bundle exec jekyll build
+```
+
+## TODO (posar en fitxer separat)
+- [x] Canviat el theme bàsic, `Minima`, too basic [(info)](https://www.inmotionhosting.com/support/website/jekyll/how-to-change-your-jekyll-theme-with-rubygems/)
+- [x] New theme: [Just the Docs](https://jekyllthemes.io/theme/just-the-docs) that won't work in Github Pages (free version)
+- [ ] Add menu & subsections in page, [info](https://pmarsceill.github.io/just-the-docs/docs/navigation-structure/#pages-with-children)
+- [ ] Afegir apunts i crear pàgines
+- [ ] Google Analytics
+- [ ] Desactivar Github Pages
+- [ ] Penjar a màquina virtual
+- [ ] Adquirir domini propi 
+
+## Webgraphy
 PAGINA CREADA AMB AQUEST TUTORIAL BASIC:    
 
-https://pages.github.com/
-
-SOBRE JEKYLL i GITHUB PAGES,
-
+### Jekyll combinat amb Github Pages (massa limitat pel que el meu site necessita)
+- https://pages.github.com/
 - https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/creating-a-github-pages-site-with-jekyll
 - https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/testing-your-github-pages-site-locally-with-jekyll
-
-## JEKYLL
-
-    sudo apt install jekyll
-
-Installara ruby i bundler al mateix temps que jekyll
-
-    jekyll new . 
-
-Cal seguir les instrucc del fitxer gem (també presents a la URL anterior)
-
-Cal fer, si cal,
-
-    bundle install
-    bundle update github-pages
-
-Ja que hi pot haver algunes descoordinacions amb les versions indicades a `Gemfile`
-
-### Desplegar localment
-
-Per executar i desplegar localment, 
-
-    bundle exec jekyll serve
-
-### Desplegar remotament
-
-    git push
-
-## Fer canvis.
-
-- Podem crear directoris i pàgines markdown, que després podem compilar amb 
-
-    bundle exec jekyll build
-
-I després, feim commit i ho pujam online. 
-
-- Podem crear variables i modificar les bàsiques al fitxer `_config.yml`
-- Podem modificar la plantilla `minima` anant a `vendor/bundle/ruby/2.7.0/gems/minima-2.5.1, afegint-li imatges, variables del fitxer anterior, canviant els estils...
-
-## TODO
-- [x] Triar tema:
-  - El tema per defecte, `Minima`, és molt bàsic.
-  - Com canviar tema: fàcil, en 4 passes. Hi ha molts tutorials, per exemple [aquest](https://www.inmotionhosting.com/support/website/jekyll/how-to-change-your-jekyll-theme-with-rubygems/)
-  - Tema triat: [Just the Docs](https://jekyllthemes.io/theme/just-the-docs) però com no funciona a Github Pages, llavors he triat [Minimal](https://github.com/pages-themes/minimal)
-- [ ] Afegir dropdowns a Minimal, pendent - a Just the Docs era fàcil, explicat [aqui](https://pmarsceill.github.io/just-the-docs/docs/navigation-structure/#pages-with-children)
-- [ ] Afegir materials
-- [ ] Google Analytics

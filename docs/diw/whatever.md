@@ -1,7 +1,7 @@
 ---
 layout: default
-title:  DOM
-parent: DWEC
+title:  Whatever
+parent: DIW
 
 #categories: jekyll update
 ---

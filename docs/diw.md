@@ -1,6 +1,6 @@
 ---
 layout: default
-title: DIW
+title: Disseny d'Interfícies Web
 nav_order: 1
 has_children: true
 ---

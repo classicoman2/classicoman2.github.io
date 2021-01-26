@@ -1,4 +1,5 @@
 ---
+layout: default
 title:  Expressions Regulars
 parent: DWEC
 

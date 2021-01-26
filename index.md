@@ -2,18 +2,8 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-#layout: home    -  xtoni  Per a que no surtin els posts
+
+layout: default
+nav_order: 2
+has_children: true
 ---
-
-Benvinguts a `Classicoman Experience`.
-
-En aquest web trobaràs apunts de les assignatures `Design of Web Interfaces` i `Desenvolupament Web en Entorn Client` del curs 2020.
-
-## Desenvolupament Web en Entorn Client
-
-- 1 - [El DOM](./docs/dwec/dom.html)
-- 2 - [Expressions Regulals](./docs/dwec/regexpr.html)
-
-## Design of Web Interfaces
-
-- 
