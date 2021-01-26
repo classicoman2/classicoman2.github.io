@@ -3,13 +3,17 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 #layout: home    -  xtoni  Per a que no surtin els posts
-layout: page
 ---
 
+Benvinguts a `Classicoman Experience`.
 
-Nou index fet per jo. 
+En aquest web trobaràs apunts de les assignatures `Design of Web Interfaces` i `Desenvolupament Web en Entorn Client` del curs 2020.
 
- is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+## Desenvolupament Web en Entorn Client
 
-[El DOM](./dwec/dom.html)
-[Expressions Regulals](./dwec/regexpr.html)
+- 1 - [El DOM](./docs/dwec/dom.html)
+- 2 - [Expressions Regulals](./docs/dwec/regexpr.html)
+
+## Design of Web Interfaces
+
+- 

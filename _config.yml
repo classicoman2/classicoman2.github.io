@@ -40,3 +40,12 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+
+toc:
+  - title: DWEC
+    subfolderitems:
+      - page: DOM
+        url: /dom.html
+  - title: DIW
+
