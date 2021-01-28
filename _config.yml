@@ -26,7 +26,7 @@ github_username:  classicoman2
 
 # Build settings
 markdown: kramdown
-theme: minima
+theme: jekyll-theme-minimal
 #theme: just-the-docs
 
 plugins:
