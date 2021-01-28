@@ -35,9 +35,7 @@ bundle exec jekyll build
 - [ ] Adquirir domini propi 
 
 ## Webgraphy
-PAGINA CREADA AMB AQUEST TUTORIAL BASIC:    
-
-### Jekyll combinat amb Github Pages (massa limitat pel que el meu site necessita)
-- https://pages.github.com/
-- https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/creating-a-github-pages-site-with-jekyll
-- https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/testing-your-github-pages-site-locally-with-jekyll
+- Jekyll combinat amb Github Pages (massa limitat pel que el meu site necessita)
+  - https://pages.github.com/
+  - https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/creating-a-github-pages-site-with-jekyll
+  - https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/testing-your-github-pages-site-locally-with-jekyll
