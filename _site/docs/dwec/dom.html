@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>DOM | The Monuments</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="DOM" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Pàgina amb els apunts de les meves assignatures." />
+<meta property="og:description" content="Pàgina amb els apunts de les meves assignatures." />
+<link rel="canonical" href="http://localhost:4000/docs/dwec/dom.html" />
+<meta property="og:url" content="http://localhost:4000/docs/dwec/dom.html" />
+<meta property="og:site_name" content="The Monuments" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/docs/dwec/dom.html","description":"Pàgina amb els apunts de les meves assignatures.","headline":"DOM","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=2614af81291489499b52673ef1f82842ae8d2063">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">The Monuments</a></h1>
+        
+        
+
+        <p>Pàgina amb els apunts de les meves assignatures.</p>
+
+        
+        <p class="view"><a href="https://github.com/classicoman2/classicoman2.github.io">View the Project on GitHub <small>classicoman2/classicoman2.github.io</small></a></p>
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      <h1 id="el-dom-manipulació-mètodes">El DOM. Manipulació. Mètodes.</h1>
+
+<p><strong>Atenció!</strong>: El <em>Crash Course</em> de Traversy Media inclou tot el que necessitau saber sobre DOM (i més):</p>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=0ik6X4DJKCc">JavaScript DOM Crash Course - Part 1</a></li>
+  <li><a href="https://www.youtube.com/watch?v=mPd2aJXCZ2g">JavaScript DOM Crash Course - Part 2</a></li>
+  <li><a href="https://www.youtube.com/watch?v=wK2cBMcDTss">JavaScript DOM Crash Course - Part 3</a></li>
+  <li><a href="https://www.youtube.com/watch?v=i37KVt_IcXw">JavaScript DOM Crash Course - Part 4</a></li>
+</ul>
+
+<p>Més informació:</p>
+
+<ul>
+  <li>https://eloquentjavascript.net/14_dom.html</li>
+</ul>
+
+<h2 id="1-intro-">1 Intro <a href="https://www.w3schools.com/js/js_htmldom.asp">##</a></h2>
+
+<p>El DOM (<strong>Document Object Model)</strong> és un arbre que conté tots els elements de la pàgina web ordenats jeràrquicament.</p>
+
+<p>Exemple de DOM:</p>
+
+<p><img src="https://www.w3schools.com/js/pic_htmltree.gif" alt="DOM basic example" /></p>
+
+<p>És un <a href="https://dom.spec.whatwg.org/">estàndard de la W3C (World Wide Web Consortium)</a> que defineix l'estàndard per accedir els documents dels navegadors.</p>
+
+<p>El DOM permet interpretar documents web HTML amb CSS i documents XML.</p>
+
+<p>Javascript pot emprar l’estructura DOM per a:</p>
+
+<ul>
+  <li>canviar el text o els atributs dels elements</li>
+  <li>gestionar la interactivitat (<em>events</em>) en la interfície.</li>
+</ul>
+
+<h2 id="2-mètodes-i-propietats-bàsiques-">2 Mètodes i propietats bàsiques <a href="https://www.w3schools.com/js/js_htmldom_methods.asp">##</a></h2>
+
+<ul>
+  <li>Exemple de <em>Mètode</em>: .getElementById()</li>
+  <li>Exempe de <em>Propietat</em> .innerHTML</li>
+</ul>
+
+<h2 id="3-mètodes-per-localitzar-elements-">3 Mètodes per Localitzar elements <a href="https://www.w3schools.com/js/js_htmldom_elements.asp">##</a></h2>
+
+<p>Els exemples que veurem en aquest apartat:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Exemples</strong>: <a href="https://github.com/classicoman2/guide_javascript/blob/master/04/dom-search-elements.html"><strong>dom-search-elements.html</strong></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Constantment, en treballar amb el DOM amb JS, necessitarem <strong>accedir</strong> als elements del DOM de diferents maneres: un element amb un identificador, tots els elements d'un tipus o d'una classe determinada, tots els elements que comparteixin un selector, tots els elements d'un formulari… etc.</li>
+</ul>
+
+<h4 id="getelementbyidid">getElementById(id)</h4>
+
+<ul>
+  <li>Retorna un element HTML a partir del seu id</li>
+</ul>
+
+<h4 id="getelementsbytagname-">getElementsByTagName( )</h4>
+
+<ul>
+  <li>Retorna una <a href="https://www.w3schools.com/js/js_htmldom_collections.asp"><strong>HTMLCollection</strong></a> (una espècie d'array d'elements) amb els elements de document del <strong>tag</strong> que indicam: p, div, span, etc…</li>
+  <li>Ús genèric: document.getElementsByTagName( )</li>
+  <li>Si en lloc de <em>document</em> posam un objecte del DOM, llavors tornarà només els elements amb aquell <strong>tag</strong> a dins d’aquest element del DOM</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// capturam tots els elements de tipus &lt;p&gt;</span>
+  <span class="kd">let</span> <span class="nx">pElements</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="dl">"</span><span class="s2">p</span><span class="dl">"</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="nx">p</span> <span class="k">of</span> <span class="nx">pElements</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Fer alguna cosa amb aquests elements</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="getelementsbyclassname-">getElementsByClassName( )</h4>
+
+<ul>
+  <li>Retorna una <a href="https://www.w3schools.com/js/js_htmldom_collections.asp"><strong>HTMLCollection</strong></a> (una espècie d’array d’elements) amb els elements de document de la <strong>classe</strong> que indicam</li>
+  <li>Ús genèric: document.getElementsByTagName( )</li>
+  <li>Si en lloc de <code class="language-plaintext highlighter-rouge">document</code> posam un objecte del DOM, llavors tornarà només els elements amb aquella <strong>classe</strong> a dins d’aquest element del DOM</li>
+</ul>
+
+<h4 id="queryselectorall-">querySelectorAll( )</h4>
+
+<ul>
+  <li>Retorna una <a href="https://www.w3schools.com/js/js_htmldom_nodelist.asp">NodeList</a> (semblant a HTMLCollection) amb els elements que encaixen amb el <strong>selector</strong> que passam per paràmetre</li>
+  <li>Ens permet més flexibilitat i concreció que <code class="language-plaintext highlighter-rouge">getElementsByClassName</code></li>
+  <li>La variant <code class="language-plaintext highlighter-rouge">querySelector()</code> retorna només el primer element que encaixa amb el selector proporcionat</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="c1">// Captura tots els &lt;p&gt; que son descendents directes de #wrapper</span>
+   <span class="kd">let</span> <span class="nx">list</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">#wrapper2 &gt; p</span><span class="dl">"</span><span class="p">);</span>
+   <span class="k">for</span> <span class="p">(</span><span class="nx">l</span> <span class="k">of</span> <span class="nx">list</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Fer alguna cosa amb aquests elements</span>
+   <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="4-modificar-elements-">4 Modificar elements <a href="https://www.w3schools.com/js/js_htmldom_html.asp">##</a></h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Exemples</strong>: <a href="https://github.com/classicoman2/guide_javascript/tree/master/04"><strong>dom-modify-elements.html</strong></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="innerhtml">.innerHTML</h4>
+
+<ul>
+  <li>Canvia contingut HTML de <em>element</em></li>
+</ul>
+
+<h4 id="nomdelatribut">.<em>nomdelAtribut</em></h4>
+
+<ul>
+  <li>Canvia el valor d’un atribut de <em>element</em></li>
+</ul>
+
+<h4 id="stylenomdelapropietat">.style.<em>nomdelaPropietat</em></h4>
+
+<ul>
+  <li>Canvia l'estil d'un element HTML. Més <a href="https://www.w3schools.com/js/js_htmldom_css.asp"><strong>aqui</strong></a></li>
+  <li><strong>Atenció</strong> : Les propietats de CSS formades per 2 paraules (exemple: font-style, color-background) se converteixen en <em>CamelCase</em> (exemple: <code class="language-plaintext highlighter-rouge">fontStyle</code>, <code class="language-plaintext highlighter-rouge">colorBackground</code>)</li>
+</ul>
+
+<h4 id="setattribute-nomatribut-valor-">.setAttribute( nomAtribut, valor )</h4>
+
+<ul>
+  <li>Canvia el valor d’un atribut emprant una funció amb dos paràmetres en lloc de la fòrmula anterior. És una alternativa a la propietat anterior</li>
+</ul>
+
+<h4 id="classname-">.className <a href="https://www.w3schools.com/jsref/prop_html_classname.asp">#</a></h4>
+
+<ul>
+  <li>Aquest atribut permet consultar o establir la classe d'un element de forma directa.</li>
+</ul>
+
+<h4 id="classlist-">.classList() <a href="https://www.w3schools.com/jsref/prop_element_classlist.asp">#</a></h4>
+
+<ul>
+  <li>Sense cap dubte, la millor manera de treballar amb classes amb Javascript</li>
+  <li><code class="language-plaintext highlighter-rouge">classList</code> incorpora tot un seguit de mètodes per:
+    <ul>
+      <li>Afegir i eliminar classes: <code class="language-plaintext highlighter-rouge">add()</code> i <code class="language-plaintext highlighter-rouge">remove()</code></li>
+      <li>Alternar una classe amb <code class="language-plaintext highlighter-rouge">toggle()</code>: afegir-la i eliminar-la alternativament</li>
+      <li>Consultar si un element té assignada o no una classe amb <code class="language-plaintext highlighter-rouge">contains()</code></li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">//Afegeix la classe .contenedor a l'element #myDiv</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">myDIV</span><span class="dl">"</span><span class="p">).</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">"</span><span class="s2">contenedor</span><span class="dl">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="5-modificar-larbre-del-dom-">5 Modificar l’arbre del DOM <a href="https://www.w3schools.com/js/js_htmldom_nodes.asp">##</a></h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Exemples</strong> : <a href="https://github.com/classicoman2/guide_javascript/tree/master/04"><strong>dom-create-elements.html</strong></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="createelement-">.createElement( )</h4>
+
+<ul>
+  <li>Crea un element HTML</li>
+  <li>Que crei un element no significa que aparegui automàticament en la pàgina. Per a que es pugui mostrar, s’ha d’afegir a algun element preexistent.</li>
+</ul>
+
+<h4 id="appendchild-">.appendChild( )</h4>
+
+<ul>
+  <li>Afegeix un element que acabam de crear a un altre element, que serà el seu <em>pare</em></li>
+</ul>
+
+<h4 id="removechild-">.removeChild( )</h4>
+
+<ul>
+  <li>Elimina un element del seu <em>pare</em></li>
+</ul>
+
+<h4 id="replacechildnew-old">.replaceChild(new, old)</h4>
+
+<ul>
+  <li>Substitueix un element per un altre</li>
+</ul>
+
+<h2 id="6-navegació-entre-nodes-">6 Navegació entre nodes <a href="https://www.w3schools.com/js/js_htmldom_navigation.asp">##</a></h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Exemple</strong> : <a href="https://github.com/classicoman2/guide_javascript/tree/master/04"><strong>dom-navegacio.html</strong></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Útil quan necessitam accedir a un "familiar" d'un node (parent, child, siblings)</p>
+
+<ul>
+  <li>parentNode</li>
+  <li>childNodes[nodenumber]</li>
+  <li>firstChild</li>
+  <li>lastChild</li>
+  <li>nextSibling</li>
+  <li>previousSibling</li>
+</ul>
+
+<p><img src="/docs/dwec/assets/html-links.svg" alt="Exemple d'ús" /></p>
+
+<h4 id="parentnode">parentNode</h4>
+
+<p>A partir d'un node, podem obtenir la referència al seu pare (ja hem vist algun exemple).</p>
+
+<h4 id="childnodes">childNodes[]</h4>
+
+<ul>
+  <li>childNodes és un <strong>NodeList</strong> , que ja vam veure anteriorment en aquests apunts</li>
+  <li>Anam a veure com treballar amb <code class="language-plaintext highlighter-rouge">childNodes[]</code>, perquè no és tan fàcil com sembla</li>
+  <li>Primer de tot, hem de tenir en compte que un element qualsevol no conté text, sinó que conté un <strong>node de text</strong> , que és un node de DOM</li>
+</ul>
+
+<p><strong>Què son els nodes?</strong></p>
+
+<ul>
+  <li>_ <strong>document</strong> _ és un node</li>
+  <li>Cadascun dels <strong>elements</strong> o tags HTML d’un document és un node</li>
+  <li>El <strong>text</strong> dins de cada element HTML (que és accessible amb la propietat .innerHTML) és també un node</li>
+  <li>Si hi ha <strong>espais en blanc</strong> entre elements que són "siblings", llavors hi haurà un altre <strong>node de text</strong></li>
+  <li>Si hi ha espais en blanc entre un element i el tag que tanca el pare, llavors hi haurà un altre <strong>node de text</strong></li>
+  <li>Per esbrinar el número de child nodes, emprarem <code class="language-plaintext highlighter-rouge">childNodes.length</code>.</li>
+</ul>
+
+<h2 id="7-altres-propietats-i-mètodes-de-document-">7 Altres propietats i mètodes de 'document' <a href="https://www.w3schools.com/jsref/dom_obj_document.asp">##</a></h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Exemple</strong> : <a href="https://github.com/classicoman2/guide_javascript/tree/master/04"><strong>dom-document.html</strong></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>El keyword <em>document</em> disposa de tota una sèrie de mètodes i propietats per tal de treballar amb el DOM.</li>
+  <li>En l'exemple anterior, veim com emprar-ne alguns d'ells.</li>
+  <li>Els altres, els anirem veurem en aquests apunts quan ens facin falta.</li>
+</ul>
+
+
+      </section>
+      <footer>
+        
+        <p>This project is maintained by <a href="https://github.com/classicoman2">classicoman2</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>

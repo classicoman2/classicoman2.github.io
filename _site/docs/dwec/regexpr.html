@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Expressions Regulars | The Monuments</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="Expressions Regulars" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Pàgina amb els apunts de les meves assignatures." />
+<meta property="og:description" content="Pàgina amb els apunts de les meves assignatures." />
+<link rel="canonical" href="http://localhost:4000/docs/dwec/regexpr.html" />
+<meta property="og:url" content="http://localhost:4000/docs/dwec/regexpr.html" />
+<meta property="og:site_name" content="The Monuments" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/docs/dwec/regexpr.html","description":"Pàgina amb els apunts de les meves assignatures.","headline":"Expressions Regulars","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=2614af81291489499b52673ef1f82842ae8d2063">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">The Monuments</a></h1>
+        
+        
+
+        <p>Pàgina amb els apunts de les meves assignatures.</p>
+
+        
+        <p class="view"><a href="https://github.com/classicoman2/classicoman2.github.io">View the Project on GitHub <small>classicoman2/classicoman2.github.io</small></a></p>
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      <p>| Els exemples d'aquest tutorial es troben en el repositori <a href="https://github.com/classicoman2/guide_javascript">guide_javascript</a> |
+| — |</p>
+
+<h1 id="6-expressions-regulars">6 EXPRESSIONS REGULARS</h1>
+
+<h2 id="materials">Materials</h2>
+
+<p>Eina per practicar amb expressions regulars de forma interactiva, amb <em>cheat sheet</em>:</p>
+
+<p><a href="https://regexr.com/">https://regexr.com/</a></p>
+
+<p>Alguns Tutorials:</p>
+
+<ul>
+  <li><a href="https://www.w3schools.com/jsref/jsref_obj_regexp.asp">Referència Expressions Regulars en Javacript (W3Schools)</a></li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[Regular expressions - JavaScript</td>
+          <td>MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li><a href="https://eloquentjavascript.net/09_regexp.html">Regular Expressions</a> (Eloquent Javascript)</li>
+</ul>
+
+<p>Un <a href="https://www.youtube.com/watch?v=rhzKDrUiJVk">Video explicatiu molt recomanable</a></p>
+
+<h2 id="expressions-regulars">Expressions regulars</h2>
+
+<h3 id="què-son">Què son</h3>
+
+<p>Les expressions regulars són <em>patterns</em> emprats per trobar combinacions de caràcters en <em>strings.</em></p>
+
+<p>Procedeixen del llenguatge formal i matemàtic. S'empren en molts de contextos,</p>
+
+<p>Les expressions regulars es poden emprar amb:</p>
+
+<ul>
+  <li>Els mètodes <strong>exec()</strong> i <strong>test()</strong> que són propis d'expressions regulars</li>
+  <li>Els mètodes de <em>strings:</em> match(), matchAll(), replace(), replaceAll(), search() i and split()</li>
+</ul>
+
+<p>###</p>
+
+<h3 id="taula-de-caràcters-i-metacaràcters-font-aqui">Taula de caràcters i metacaràcters (font: <a href="https://regexone.com/lesson/introduction_abcs">aqui</a>)</h3>
+
+<h4 id="1--caràcters-constants">1.- Caràcters constants</h4>
+
+<p><strong>abc</strong> Lletres</p>
+
+<p><strong>123</strong> Digits numèrics</p>
+
+<h4 id="2--metacaràcters-generals">2.- Metacaràcters generals</h4>
+
+<ul>
+  <li><strong>.</strong> Qualsevol caràcter (només 1)</li>
+  <li><strong>\w</strong> Qualsevol caràcter alfanumèric</li>
+  <li><strong>\W</strong> Qualsevol caràcter no alfanumèric</li>
+  <li><strong>\d</strong> Qualsevol dígit numèric</li>
+  <li><strong>\D</strong> Qualsevol caràcter <strong>no</strong> dígit numèric</li>
+  <li><strong>\s</strong> Espai en blanc</li>
+  <li><strong>\S</strong> Qualsevol caràcter manco l'espai en blanc</li>
+</ul>
+
+<h4 id="3--grups-i-rangs">3.- Grups i rangs</h4>
+
+<ul>
+  <li><strong>[abc]</strong> Només a, b o c (separadament)</li>
+  <li><strong>[^abc]</strong> Ni a, ni b ni c</li>
+  <li><strong>[a-z]</strong> Rang: Characters de la <em>a</em> a la <em>z</em> (minúscules)</li>
+  <li><strong>[A-Z]</strong> Rang: Characters de la <em>A</em> a la <em>Z</em> (majúscules)</li>
+  <li><strong>[0-9]</strong> Números de 0 a 9</li>
+  <li><strong>(abc)</strong> Grup</li>
+</ul>
+
+<h4 id="4--quantificadors">4.- Quantificadors</h4>
+
+<ul>
+  <li><strong>a*</strong> Zero o més repeticions de a</li>
+  <li><strong>a+</strong> Una o més repeticions de a</li>
+  <li><strong>a{m}</strong> m repeticions de a</li>
+  <li><strong>a{m,}</strong> Com a mímin <em>m</em> repeticions de a
+-<strong>a{m,n}</strong> De m a n repeticions de a</li>
+</ul>
+
+<h4 id="5--alternatives">5.- Alternatives</h4>
+
+<ul>
+  <li><strong>x?</strong> a és opcional (pot sortir o no)</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>**(abc</td>
+          <td>def)** Captura abc o def</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h4 id="6--marques-inici-i-final">6.- Marques inici i final</h4>
+
+<ul>
+  <li><strong>^a</strong> Comença amb a</li>
+  <li><strong>a$</strong> Acaba amb a</li>
+</ul>
+
+<h4 id="7--caràcters-escapats">7.- Caràcters Escapats</h4>
+
+<ul>
+  <li><strong>.</strong> Punt ("Escapat" per no confondre amb el metacaràcter general . )</li>
+  <li><strong>\?</strong> Interrogant ("Escapat" per no confondre amb el metacaràcter opcional ? )</li>
+  <li>etc.</li>
+</ul>
+
+<h2 id="exercicis">Exercicis</h2>
+
+<p>Intenta resoldre els exercicis d'aquesta <a href="https://regexone.com/lesson/introduction_abcs">pàgina web</a></p>
+
+<p>Veurem que hi ha sempre unes quantes solucions possibles, es tracta de trobar sempre la més <em>precisa.</em></p>
+
+<p><strong>Proposta nadalenca:</strong> Proposa solucions a cada exercici en les caselles d'aquest <a href="https://docs.google.com/spreadsheets/d/1vxq-v95BA-DvFWVSmcBJaYME5xxFvuGJyqoPmOOpahU/edit#gid=0">full de càlcul</a></p>
+
+
+
+      </section>
+      <footer>
+        
+        <p>This project is maintained by <a href="https://github.com/classicoman2">classicoman2</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>

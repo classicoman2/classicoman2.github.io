@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Expressions Regulars | The Monuments</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="Expressions Regulars" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Pàgina amb els apunts de les meves assignatures." />
+<meta property="og:description" content="Pàgina amb els apunts de les meves assignatures." />
+<link rel="canonical" href="http://localhost:4000/docs/dwec/tests-unitaris.html" />
+<meta property="og:url" content="http://localhost:4000/docs/dwec/tests-unitaris.html" />
+<meta property="og:site_name" content="The Monuments" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/docs/dwec/tests-unitaris.html","description":"Pàgina amb els apunts de les meves assignatures.","headline":"Expressions Regulars","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=2614af81291489499b52673ef1f82842ae8d2063">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">The Monuments</a></h1>
+        
+        
+
+        <p>Pàgina amb els apunts de les meves assignatures.</p>
+
+        
+        <p class="view"><a href="https://github.com/classicoman2/classicoman2.github.io">View the Project on GitHub <small>classicoman2/classicoman2.github.io</small></a></p>
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      <h1 id="7-tests-unitaris-amb-mochajs">7 Tests Unitaris amb Mocha.js</h1>
+
+<h2 id="intro-al-testing">Intro al testing</h2>
+
+<p>Quan desenvolupam una aplicació, necessitam implementar <strong>tests</strong> que ens permetin provar funcionalitats clau del nostre programa o bé comprovar la integració entre diferents mòduls.</p>
+
+<p>Els tests són la manera més simple de detectar inconsistències en el codi o falles previsibles.</p>
+
+<p>Per cada llenguatge de programació i entorn de desenvolupament existeixen diversos <strong>frameworks</strong> per a fer tests del codi.</p>
+
+<h3 id="tipus-de-tests">Tipus de tests</h3>
+
+<p>Veurem els 2 tipus de tests més freqüents: <strong>tests unitaris</strong> i <strong>tests d'integració</strong></p>
+
+<h4 id="unit-testing">Unit Testing</h4>
+
+<p>This testing is used to test a small isolated piece of code,</p>
+
+<p>Unit testing will be done by developers to test functions or blocks. It doesn't have any Networking calls or DB operations.</p>
+
+<h4 id="integration-testing">Integration Testing</h4>
+
+<p>Integration testing is used to test a group of individual modules, components or piece of units, to check how two or more modules, components or a different piece of code are will work together.</p>
+
+<p>The main purpose of Integration testing is to find bugs when <strong>two or more modules are integrated.</strong></p>
+
+<h2 id="tdd-vs-bdd">TDD vs BDD</h2>
+
+<p>Els Tests se solen enmarcar en dos escenaris principalment:</p>
+
+<h3 id="tdd--test-driven-development"><a href="http://agiledata.org/essays/tdd.html#WhatIsTDD">TDD = Test-driven development</a></h3>
+
+<ul>
+  <li>És una tècnica que consisteix en escriure Tests abans i de crear el codi de desenvolupament, a continació escriure el codi de les nostres aplicacions, provar els tests a continuació i finalment, refactoritzar; i llavors, repetir el procés fins acabar el codi:</li>
+</ul>
+
+<p><img src="RackMultipart20210128-4-rdzzhl_html_3a6d309422f21b.png" alt="" /></p>
+
+<ul>
+  <li><strong>Write tests</strong> for the required software functionality</li>
+  <li><strong>Run the tests</strong> for the software functionality</li>
+  <li><strong>Implement the software functionality</strong></li>
+  <li><strong>Fix bugs</strong> and <strong>refactor</strong> until all tests pass</li>
+  <li><strong>Repeat</strong> the cycle for any new functionality</li>
+</ul>
+
+<h3 id="bdd--behavior-driven-development"><a href="https://blog.logrocket.com/a-quick-and-complete-guide-to-mocha-testing-d0e0ea09f09d/#whatismochajsusedfor">BDD = Behavior-driven development</a></h3>
+
+<ul>
+  <li>És una evolució de TDD. Pretén ajudar els desenvolupadors a crear software que sigui:
+    <ul>
+      <li>Predecible</li>
+      <li>Resilient / Resistent als canvis</li>
+      <li>Que no tengui tendència a errors.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><a href="https://phoenixnap.com/blog/tdd-vs-bdd"><strong>TDD vs BDD: Learn the Key Differences With Examples</strong></a></p>
+
+<p>Les darreres tendències en testing es troben en millorar el rendiment i l'eficiència del desenvolupament web en <a href="https://www.synopsys.com/blogs/software-security/continuous-testing-cicd/"><strong>Continuous testing</strong></a>en entorns CI/CD.</p>
+
+<h2 id="tests-amb-mochajs">Tests amb Mocha.js</h2>
+
+<p>Repositori exemple:</p>
+
+<ul>
+  <li><a href="https://github.com/classicoman2/tests-mochajs-ES6">https://github.com/classicoman2/tests-mochajs-ES6</a></li>
+</ul>
+
+<p>Més info:</p>
+
+<ul>
+  <li><a href="https://es.javascript.info/testing-mocha">Test automatizados con mocha - javascript.info</a></li>
+  <li><a href="https://medium.com/@selvarajchinnasamyks/how-to-write-an-integration-test-for-node-js-application-4a2f4140665f">How to write an Integration test for Node Js Application</a></li>
+  <li><a href="https://blog.logrocket.com/a-quick-and-complete-guide-to-mocha-testing-d0e0ea09f09d/#whatismochajsusedfor">Mocha.js, the JavaScript test framework: A tutorial</a></li>
+  <li><a href="https://gist.github.com/samwize/8877226">Mocha Guide to Testing (Gist)</a></li>
+  <li><a href="https://www.chaijs.com/">Guia de Chai</a></li>
+</ul>
+
+<p>###</p>
+
+<p>Mocha.js és un framework senzill per realitzar testing.</p>
+
+<p>Se poden implementar tests amb node.js (des de terminal de comandes) o en el navegador.</p>
+
+<p>Nosaltres veurem com escriure tests en fitxers .js que executarem amb <strong>node test</strong> i que ens permetran preveure possibles errors en les pràctiques.</p>
+
+
+      </section>
+      <footer>
+        
+        <p>This project is maintained by <a href="https://github.com/classicoman2">classicoman2</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>

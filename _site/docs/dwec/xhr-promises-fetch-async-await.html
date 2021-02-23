@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>8.1_JS Asíncron I: XHR | The Monuments</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="8.1_JS Asíncron I: XHR" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Pàgina amb els apunts de les meves assignatures." />
+<meta property="og:description" content="Pàgina amb els apunts de les meves assignatures." />
+<link rel="canonical" href="http://localhost:4000/docs/dwec/xhr-promises-fetch-async-await.html" />
+<meta property="og:url" content="http://localhost:4000/docs/dwec/xhr-promises-fetch-async-await.html" />
+<meta property="og:site_name" content="The Monuments" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/docs/dwec/xhr-promises-fetch-async-await.html","description":"Pàgina amb els apunts de les meves assignatures.","headline":"8.1_JS Asíncron I: XHR","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=2614af81291489499b52673ef1f82842ae8d2063">
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">The Monuments</a></h1>
+        
+        
+
+        <p>Pàgina amb els apunts de les meves assignatures.</p>
+
+        
+        <p class="view"><a href="https://github.com/classicoman2/classicoman2.github.io">View the Project on GitHub <small>classicoman2/classicoman2.github.io</small></a></p>
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      <h1 id="81_js-asíncron-i-xhr">8.1_JS Asíncron I: XHR</h1>
+
+<h2 id="table-of-contents">Table of contents</h2>
+
+<h2 id="webgrafia">Webgrafia</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[Asynchronous JavaScript - Learn web development</td>
+      <td>MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a href="https://www.youtube.com/watch?v=ZcQyJ-gxke0&amp;list=PL4cUxeGkcC9jx2TTZk3IGWKSbtugYdrlu">Asynchronous JavaScript Tutorial #1 - What is Async JavaScript (11 VÍDEOS)</a></p>
+
+<h2 id="1_repàs-de-json">1_Repàs de JSON</h2>
+
+<ul>
+  <li><a href="https://www.w3schools.com/js/js_json_intro.asp">JSON Intro</a></li>
+  <li><a href="https://www.w3schools.com/js/js_json_syntax.asp">JSON Syntax</a></li>
+  <li><a href="https://www.w3schools.com/js/js_json_datatypes.asp">JSON Data Types</a></li>
+  <li><a href="https://www.javatpoint.com/json-vs-xml">JSON vs XML</a></li>
+  <li><a href="https://www.w3schools.com/js/js_json_parse.asp">JSON.parse()</a></li>
+</ul>
+
+<p>Convertir un JSON en un objecte JS (o una combinació d'objectes i arrays)</p>
+
+<ul>
+  <li>Parsing JSON</li>
+  <li>JSON i AJAX</li>
+  <li>Excepció: no es poden "parsejar" dates, se passen com <em>strings</em></li>
+  <li>
+    <p><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjson_parse_reviver">"Parsear" amb una funció acoblada a JSON.parse()</a></p>
+  </li>
+  <li><a href="https://www.w3schools.com/js/js_json_stringify.asp">JSON.stringify()</a>: Converteix un objecte Javascript a string en notació JSON.</li>
+</ul>
+
+<h2 id="2_js-síncron-vs-asíncron">2_JS síncron vs asíncron</h2>
+
+<p>Javascript és un llenguatge d'un sol fil d'execució. Això vol dir que en principi, només pot executar operacions síncrones.</p>
+
+<p>Javascript no pot crear_ <strong>threads o múltiples fils d'execució</strong> _com si pot fer el llenguatge <strong>Java</strong> , per exemple</p>
+
+<p>El codi Javascript que hem après i creat durant el curs és majoritàriament síncron.</p>
+
+<blockquote>
+  <p>Un <strong>codi síncron</strong> està composat per instruccions que s'executen unes darrere les altres, és a dir, que una instrucció només s'executa quan l'anterior instrucció ha acabat d'executar-se.</p>
+</blockquote>
+
+<p>Això és així perquè el motor d'execució de Javascript (<a href="https://v8.dev/">V8 a Chrome</a> i a Node.js, <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey">Spidermonkey a Mozilla</a>) treballa sempre en un fil d'execució.</p>
+
+<p>No obstant, el motor d'execució de Javascript treballa sempre amb <strong>API</strong> s que amplien la seva funcionalitat.</p>
+
+<p>En un script d’interfície com és Javascript, a vegades es necessita disposar de la possibilitat de que no s'esperi al final de l'execució d'una instrucció per a iniciar l'execució de la següent instrucció.</p>
+
+<p>Per exemple,</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**Instrucció a** - síncrona: comença → acaba
+**Instrucció b** - asíncrona: comença (però no acaba)
+**Instrucció c** - síncrona: comença → acaba
+**Instrucció d** - síncrona: comença → acaba
+**Instrucció e** - síncrona: comença → acaba ara acaba
+...
+Execució de la **Instrucció b**
+</code></pre></div></div>
+
+<p>Entre els tipus de JS asíncron més freqüent, trobam:</p>
+
+<h3 id="setinterval-i-settimeout">setInterval() i setTimeout()</h3>
+
+<p>Aquests dos mètodes <a href="https://javascript.info/settimeout-setinterval">no són part de l'especificació de Javascript</a> sinó que son part de una <strong>Web API</strong> de la que disposen els navegadors.</p>
+
+<p>Són dos mètodes que programen un event que es disparà al cap d'un temps i provoca que s'executi una <strong>funció callback</strong>.</p>
+
+<blockquote>
+  <p>Recorda: en programació, un <em>callback</em> fa referència de forma genèrica a una funció que es passa com a paràmetre d'una altra funció. <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing#Async_callbacks"><strong>Més sobre callbacks</strong></a></p>
+</blockquote>
+
+<h3 id="eventtarget">EventTarget</h3>
+<p>Hi ha una altra <strong>Web API</strong> , de fet la més coneguda, que és la <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model"><strong>Web API DOM</strong></a>, que implementa events sobre elements del document web susceptibles de rebre events: <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget">la interficie EventTarget</a></p>
+
+<p>Les funcions <em>callback</em> dels <em>events handlers</em> de Javascript l'exemple clàssic d'execució asíncrona:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">myBtn</span><span class="dl">'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello World!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Ja hem vist com funciona això a la pràctica durant el curs: La funció <em>callback</em> és passa com a paràmetre del mètode <em>addEventListener</em> i no s'executa fins que es produeix l'event corresponent - en aquest cas un clic en el botó</p>
+
+<h2 id="3_ajax">3_AJAX</h2>
+
+<p>Les cridades Ajax ( <strong>A</strong> synchronous <strong>JA</strong> vaScript and <strong>X</strong> ML) o XHR són un altre exemple clàssic d'instrucció asíncrona.</p>
+
+<p>AJAX va introduir les següents novetats en la programació web:</p>
+
+<ol>
+  <li>Fer una HTTP Request des d'una pàgina carregada en navegador a un servidor sense necessitat d'emprar la línia de URL - a diferència, per ex, de l'acció d'un formulari PHP en què aquest obliga a recarrgar la pàgina.</li>
+  <li>Obtenir dades del servidor i carregar-les en pantalla sense necessitat d'actualitzar tota la pàgina - la petició HTTP Request es fa "en el background"</li>
+</ol>
+
+<p>Avui en dia, és una cosa comuna ja Javascript, tots els navegadors i tots el Frameworks ho implementen.</p>
+
+<p>AJAX té molts avantatges però incorpora algunes <a href="https://en.wikipedia.org/wiki/Ajax_(programming)#Drawbacks">noves problemàtiques</a> a la programació web:</p>
+
+<ul>
+  <li>Hi ha aparells antics que no incorporen XMLHttpRequest i no hi funciona Ajax</li>
+  <li>Problemes amb <strong>screen readers</strong> ja que el contingut ha estat generat dinàmicament i de forma asíncrona</li>
+  <li>El <strong>Debug</strong> és més complicat que en programació JS normal</li>
+  <li>Dificultat per indexar (SEO) el contingut de pàgines actualitzades amb Ajax</li>
+  <li>Problemes amb <strong>Web Crawlers</strong> i indexació en els Cercadors Web</li>
+</ul>
+
+<p>Anem a començar a treballar amb AJAX.</p>
+
+<p>Per això començarem amb l'objecte XMLHTTPRequest</p>
+
+<h2 id="4_xmlhttprequest-o-xhr">4_XMLHTTPRequest (o XHR)</h2>
+
+<p>Aquest objecte es va crear amb l'objectiu d'implementar AJAX.</p>
+
+<p>La idea inicial era - d'aqui el seu nom tan llarg i mal de recordar :</p>
+
+<ol>
+  <li>Fer peticions <strong>HTTP Request</strong> en background</li>
+  <li>Interactuar amb servidors i obtenir dades en format <strong>XML</strong></li>
+</ol>
+
+<p>Avui dia es pot emprar XHR o les seves variants modernes (Fetch, Axios ..) per a altres coses:</p>
+
+<ul>
+  <li>Carregar fitxers o recursos multimèdia del propi servidor - sempre que se permeti CORS - o de servidors externs</li>
+  <li>Atacar una Rest API del propi servidor - sempre que se permeti CORS - o de servidors externs</li>
+  <li>Executar codi <em>back</em> - PHP, Python, etc - en el propi servidor</li>
+</ul>
+
+<h3 id="els-4-estats">Els 4 estats</h3>
+
+<p>En aquest exemple, veurem el funcionament bàsic de la petició XHR i els 4 estats en què es pot trobar el client XHR</p>
+
+<blockquote>
+  <table>
+    <tbody>
+      <tr>
+        <td><strong>Exemple:</strong> <a href="https://github.com/classicoman2/guide_javascript/blob/master/08/XHR/XHR_example1-4-estats.html">XHR_example1-4-estats.html</a></td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+
+<p>Més info:</p>
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[XMLHttpRequest - Web APIs</td>
+          <td>MDN Docs](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[XMLHttpRequest.readyState - Web APIs</td>
+          <td>MDN Docs](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h3 id="asyncsync">async/sync</h3>
+
+<p>La petició XHR es pot fer de forma asincrona o síncrona.</p>
+
+<p>De totes maneres, les requests síncrones se consideren <em>deprecated</em><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest">pels efectes negatius que té sobre la User Experience dels usuaris</a></p>
+
+<h3 id="xhr-amb-fitxers-i-api">XHR amb fitxers i API</h3>
+
+<p>El que interessa quan programam amb JS és el <strong>readyState == 4</strong> i que la petició hagi acabat amb èxit - <strong>status == 200</strong></p>
+
+<p>Aquest és el motiu de l'aspecte que té el codi de les peticions XHR més habituals</p>
+
+<blockquote>
+  <p><strong>Exemple:</strong> <a href="https://github.com/classicoman2/guide_javascript/blob/master/08/XHR/XHR_example2-fitxer.html">XHR_example2-fitxer.html</a></p>
+</blockquote>
+
+<p>Anem a explicar aquest codi.</p>
+
+<ol>
+  <li><strong>xhttp.open</strong> fa una petició GET per carregar el fitxer "fitxer.txt"</li>
+  <li>Quan la petició HTTP és resposta, s'executa la callback <em>xhr.onreadystatechange</em></li>
+  <li>Si el status és 200 i el readystatus és 4, ja disposam de la resposta</li>
+  <li>En cas d'error, no fa res, ja que no disposa de tractament d'errors</li>
+</ol>
+
+<p>NOTA: és interessant que proveu amb urls incorrectes per veure què passa.</p>
+
+<p>En aquest exemple, atacam una API que ens torna un JSON:</p>
+
+<blockquote>
+  <p><strong>Exemple:</strong> <a href="https://github.com/classicoman2/guide_javascript/blob/master/08/XHR/XHR_example3-API.html">XHR_example3-API.html</a></p>
+</blockquote>
+
+<p>En aquest exemple, faig una petició per llegir un fitxer, que retorna un error per mor de la política CORS (no puc sol·licitar aquell fitxer del servidor de AEMET perquè no m'hi estic connectant a través d'un navegador sinó a través d'una aplicació web):</p>
+
+<blockquote>
+  <p><strong>Exemple:</strong> <a href="https://github.com/classicoman2/guide_javascript/blob/master/08/XHR/XHR_example4-XML.html">XHR_example4-XML.html</a></p>
+</blockquote>
+
+<h3 id="xhr-amb-json">XHR amb JSON</h3>
+
+<p>Anem a veure un exemple sobre com manipulam un JSON que hem obtingut de la API d'un servidor extern,</p>
+
+<blockquote>
+  <p><strong>Exemple:</strong> <a href="https://github.com/classicoman2/guide_javascript/blob/master/08/XHR/XHR_example5-JSON.html">XHR_example5-JSON.html</a></p>
+</blockquote>
+
+<h3 id="xhr-i-jquery">XHR i JQuery</h3>
+
+<p>XHR Aquesta versió bàsica va millorar amb la proposta de <strong>JQuery</strong> , però no ha estat fins l'arribada de les <strong>Promises</strong> que els programadors disposen d'una forma estandaritzada - ja que <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">les</a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"><em>Promises</em></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">són objectes que formen part de l'especificació de Javascript</a></p>
+
+<h1 id="082_js-asíncron-ii-promises">08.2_JS Asíncron II: Promises</h1>
+
+<h2 id="1_promises">1_Promises</h2>
+
+<p>Les <strong>Promises</strong> són la nova forma d'emprar codi asíncron en Javascript. El codi que s'empra majoritàriament per accedir a recursos o APis des de Javascript (a navegador o a Node.js) està basat en les <em>promises</em></p>
+
+<p>Una <em>promise</em> és un objecte que representa un estat latent o intermedi, que pot desembocar en l'èxit o l'error d'una operació asíncrona. Com si el nostre codi javascript ens digués "Et prometo que et donaré una resposta a la petició al que demanes tan aviat com pugui".</p>
+
+<p>Les promeses s'empren amb l'<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">objecte</a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"><strong>Promise</strong></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">de Javascript</a></p>
+
+<p>Aquesta natura provisional de la Promise fa que tengui 3 possibles estats:</p>
+
+<ul>
+  <li><strong>pending</strong> : estat inicial, ni fulfilled (complida) ni rejected (rebutjada)</li>
+  <li><strong>fulfilled</strong> : significa que l'operació que controla la Promesa ha estat exitosa</li>
+  <li><strong>rejected</strong> : significa que l'operació ha fallat</li>
+</ul>
+
+<p>Un exemple bàsic de Promesa:</p>
+
+<p>| <strong>Exemple:</strong> <a href="https://github.com/classicoman2/guide_javascript/blob/master/08/Promises/promise-example1.html"><strong>promise-example1.html</strong></a> |
+| — |</p>
+
+<p>Podem simular amb una Promesa una operació asíncrona (que tarda aprox. 3 segons) amb un codi com aquest:</p>
+
+<p>| <strong>Exemple:</strong> <a href="https://github.com/classicoman2/guide_javascript/blob/master/08/Promises/promise-example2.html"><strong>promise-example2.html</strong></a> |
+| — |</p>
+
+<p>Una promesa es pot tractar de manera encara més simple:</p>
+
+<p>| <strong>Exemple:</strong> <a href="https://github.com/classicoman2/guide_javascript/blob/master/08/Promises/promise-example3.js"><strong>promise-example3.js</strong></a> |
+| — |</p>
+
+<p>Per entendre millor com funcionen les promeses</p>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=a_8nrslImo4">Asynchronous JavaScript Tutorial #7 - Promises</a> (video en anglès)</li>
+</ul>
+
+<p>Un altre exemple més complex de promeses, basat en el tutorial <a href="https://scotch.io/tutorials/javascript-promises-for-dummies">Javascript Promises for dummies</a> :</p>
+
+<p>| <strong>Exemple:</strong> <a href="https://github.com/classicoman2/guide_javascript/blob/master/08/Promises/promise-example4.js"><strong>promise-example4.js</strong></a> |
+| — |</p>
+
+<h3 id="encadenar-promeses">Encadenar Promeses</h3>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=GfVMKkUk2Uo"><strong>Asynchronous JavaScript Tutorial #8 - Chaining Promises</strong></a></li>
+</ul>
+
+<p>| <strong>Exemple:</strong> <a href="https://github.com/classicoman2/guide_javascript/blob/master/08/Promises/promise-example5.js"><strong>promise-example5.js</strong></a> |
+| — |</p>
+
+<h2 id="2_fetch-api">2_Fetch API</h2>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[Fetch API - Web APIs</td>
+          <td>MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li><a href="https://www.youtube.com/watch?v=drK6mdA9d_M">Asynchronous JavaScript Tutorial #9 - The Fetch API</a></li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[Working with the Fetch API</td>
+          <td>developers.google.com](https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[Fetching data from the server</td>
+          <td>MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[Fetch</td>
+          <td>javascript.info](https://javascript.info/fetch)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p>Fetch és una implementació nova d'Ajax a través d'una Javascript API</p>
+
+<p>Molt més fàcil, perquè el codi és extraordinariament curt i fàcil d'entendre. La seva estructura està basada en les <strong>Promises</strong></p>
+
+<p>Fetch és bàsicament una versió moderna i més eficient de les cridades Ajax o <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">XMLHttpRequest</a></p>
+
+<p>Exemple bàsic de Fetch (per a obtenir un json local o remot):</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">examples/example.json</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">throwError</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">statusText</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Read the response as json.</span>
+    <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">responseAsJson</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Do stuff with the JSON</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">responseAsJson</span><span class="p">);</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Looks like there was a problem</span><span class="dl">'</span><span class="p">,</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre></div></div>
+
+<p>Com funciona fetch:</p>
+
+<ol>
+  <li>Fetch retorna una <strong>Response,</strong> que és una <strong>Promesa</strong></li>
+  <li>Per obtenir la Response, encadenam el <strong>primer .then()</strong></li>
+  <li>Aquest primer .then() rep com paràmetre de la funció <em>callback</em> un <a href="https://developer.mozilla.org/es/docs/Web/API/Response"><strong>objecte de tipus Response</strong></a> amb la resposta a la petició HTTP</li>
+  <li>La Response és un "flux de dades" que hem de llegir per obtenir les dades</li>
+  <li>Per accedir a les dades, el primer .then() instancia el mètode <strong>.json()</strong> amb la Response</li>
+  <li>Altres mètodes que podem emprar apart de .json()
+    1. text() Per textos
+    2. blob() Per fitxers</li>
+  <li>Per llegir les dades, necessitam un <strong>segon .then()</strong> encadenat amb una altra <em>callback.</em> Aquest <strong>2n then()</strong> resol quan se rep el contingut (<em>body</em>) de la <em>response</em></li>
+  <li>Dins aquesta segona <em>callback</em> tenim accés a les dades i podem ja emprar-les</li>
+  <li>El bloc <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch">catch()</a> s'executa si algun dels blocs .then() falla — recorda els blocs <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch">try…catch</a> sincrons del propi <a href="https://www.w3schools.com/js/js_errors.asp">Javascript</a></li>
+</ol>
+
+<p>Exemple bàsic i funcional de Fetch amb una API,</p>
+
+<p>| <strong>Exemple:</strong> <a href="https://github.com/classicoman2/guide_javascript/blob/master/08/Fetch/fetch-example0.html"><strong>fetch-example0.html</strong></a> |
+| — |</p>
+
+<p>Anem a profunditzar una mica i vegem com funciona realment Fetch:</p>
+
+<p>| <strong>Exemple:</strong> <a href="https://github.com/classicoman2/guide_javascript/blob/master/08/Fetch/fetch-example1.html"><strong>fetch-example1.html</strong></a> |
+| — |</p>
+
+<p>Exemple de Fetch amb fitxer de text:</p>
+
+<p>| <strong>Exemple:</strong> <a href="https://github.com/classicoman2/guide_javascript/blob/master/08/Fetch/fetch-example2.html"><strong>fetch-example2.html</strong></a> |
+| — |</p>
+
+<p>Un exemple extra amb una estructura una mica diferent però amb la mateixa funció:</p>
+
+<p>| <strong>Exemple:</strong> <a href="https://github.com/classicoman2/guide_javascript/blob/master/08/Fetch/fetch-example3.html"><strong>fetch-example3.html</strong></a> |
+| — |</p>
+
+<p>I un exemple d'aplicació de fetch per carregar imatges:</p>
+
+<p>| <strong>Exemple:</strong> <a href="https://github.com/classicoman2/guide_javascript/blob/master/08/Fetch/fetch-exemple4.html"><strong>fetch-exemple4.html</strong></a> |
+| — |</p>
+
+<h2 id="3_asyncawait">3_async/await</h2>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>[async function - JavaScript</td>
+          <td>MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li><a href="https://dev.to/shoupn/javascript-fetch-api-and-using-asyncawait-47mp">JavaScript Fetch API and using Async/Await</a></li>
+</ul>
+
+<p>Si empram fetch tal i com ho hem vist, podem fer algunes coses interessants, com encadenar peticions HTTP, però llavors entrariem en el que s'anomena <strong>Callback Hell</strong></p>
+
+<p>Per evitar allò, el codi asíncron, des de fa uns anys, s'escriu emprant les paraules reservades <strong>await</strong> i <strong>async</strong> ;</p>
+
+<ul>
+  <li><strong>async</strong> permet definir una funcio asíncrona, és a dir, que s'executa de forma paral·lela al codi js</li>
+  <li><strong>await</strong> s'empra dins d'una funció asíncrona per indicar que una o més operacions dins d'aquesta funció són asíncrones i s'ha d'esperar que es finalitzi la seva execució abans de passar a la següent instrucció.</li>
+</ul>
+
+<p><strong>O sigui que:</strong></p>
+
+<ul>
+  <li><strong>await</strong> bloqueja l'execució del codi fins que no es resolgui la instrucció actual</li>
+  <li><strong>Però</strong> ho fa sempre dins d'una funció asíncrona, que s'executa en paral·lel a la resta de codi js → per tant, mai bloquejarà la interficie gràfica !</li>
+</ul>
+
+<p><strong>Video recomanat per entendre millor aquest concepte:</strong></p>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=CWjNefiE47Y">Asynchronous JavaScript Tutorial #10 - Async &amp; Await</a></li>
+</ul>
+
+<p>Exemple bàsic de async / await:</p>
+
+<p>| <strong>Exemple:</strong> <a href="https://github.com/classicoman2/guide_javascript/blob/master/08/Fetch/fetch-exemple5-await-async.html"><strong>fetch-exemple5-await-async.html</strong></a> |
+| — |</p>
+
+<p>Exemple bàsic de async / await:</p>
+
+<p>| <strong>Exemple:</strong> <a href="https://github.com/classicoman2/guide_javascript/blob/master/08/Fetch/fetch-exemple6-await-async-Error.html"><strong>fetch-exemple6-await-async-Error.html</strong></a> |
+| — |</p>
+
+<p>Aquest darrer exemple l'he obtingut d'aqui: <a href="https://www.youtube.com/watch?v=AoBSB00vW5A">Asynchronous JavaScript Tutorial #11 - Throwing Errors</a></p>
+
+
+      </section>
+      <footer>
+        
+        <p>This project is maintained by <a href="https://github.com/classicoman2">classicoman2</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
