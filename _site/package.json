@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Pàgina web del Professor",
   "scripts": {
-    "serve": "bundle exec jekyll serve" },
+    "serve": "bundle exec jekyll serve",
+    "build": "bundle exec jekyll build"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/classicoman2/classicoman2.github.io.git"

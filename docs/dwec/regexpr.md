@@ -1,13 +1,12 @@
 ---
 layout: default
 title:  Expressions Regulars
-parent: DWEC
+permalink: /regexpr
 
 #categories: jekyll update
 ---
 
-| Els exemples d&#39;aquest tutorial es troben en el repositori [guide\_javascript](https://github.com/classicoman2/guide_javascript) |
-| --- |
+> Els exemples d&#39;aquest tutorial es troben en el repositori [guide\_javascript](https://github.com/classicoman2/guide_javascript)
 
 # 6 EXPRESSIONS REGULARS
 
@@ -20,11 +19,9 @@ Eina per practicar amb expressions regulars de forma interactiva, amb _cheat she
 Alguns Tutorials:
 
 - [Referència Expressions Regulars en Javacript (W3Schools)](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
-- [Regular expressions - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-
-- [Regular Expressions](https://eloquentjavascript.net/09_regexp.html) (Eloquent Javascript)
-
-Un [Video explicatiu molt recomanable](https://www.youtube.com/watch?v=rhzKDrUiJVk)
+- [Regular expressions - JavaScript a MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Regular Expressions](https://eloquentjavascript.net/09_regexp.html)
+- [Video explicatiu molt recomanable](https://www.youtube.com/watch?v=rhzKDrUiJVk)
 
 ## Expressions regulars
 

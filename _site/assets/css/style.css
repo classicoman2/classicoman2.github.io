@@ -212,3 +212,12 @@ footer { width: 270px; float: left; position: fixed; bottom: 50px; -webkit-font-
   header ul { width: 99%; }
   header li, header ul li + li + li { width: 33%; } }
 @media print { body { padding: 0.4in; font-size: 12pt; color: #444; } }
+*, body { font-size: 1rem; }
+
+.wrapper { display: flex; flex-direction: column; }
+
+header { display: block; width: auto; position: inherit; background-color: lightgray; }
+
+section { width: auto; margin-top: 40px; }
+
+footer { position: inherit; background-color: lightgray; }

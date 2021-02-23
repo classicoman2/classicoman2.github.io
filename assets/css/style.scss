@@ -1,7 +1,29 @@
-
+---
+---
 
 @import "{{ site.theme }}";
 
-*, body {
-    font-size: 1.4em;
+*,
+body {
+  font-size: 1rem;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: block;
+  width: auto;
+  position: inherit;
+  background-color: lightgray;
+}
+
+section {
+    width: auto;
+    margin-top:40px;
+}
+footer {
+  position: inherit;
+  background-color: lightgray;
 }
