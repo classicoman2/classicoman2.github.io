@@ -1,0 +1,17 @@
+{
+  "name": "classicoman2.github.io",
+  "version": "1.0.0",
+  "description": "Pàgina web del Professor",
+  "scripts": {
+    "serve": "bundle exec jekyll serve" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/classicoman2/classicoman2.github.io.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/classicoman2/classicoman2.github.io/issues"
+  },
+  "homepage": "https://github.com/classicoman2/classicoman2.github.io#readme"
+}
