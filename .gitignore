@@ -8,8 +8,5 @@ _site/
 #.jekyll-cache/
 #.jekyll-metadata
 
-# Evitar pujar "mazacote" de vendor a git
-vendor
-
 # per _nodejs-server/server.js
 node_modules
