@@ -8,8 +8,8 @@ permalink: /dwec
 
 ## Primera Avaluació
 
-- Introducció a Javascript
-    
+- [Introducció](./introduccio)
+
 - Nombres
 - Strings
 - Bucles i Condicionals
@@ -20,7 +20,7 @@ permalink: /dwec
 - DOM 
 - Events
 
-- Mòduls (new!)
+- Mòduls :new:
 
 ## Segona Avaluació
 
@@ -30,4 +30,4 @@ permalink: /dwec
 - Javascript asíncron: Promeses
 - Fetch i async/await
 
-- Framework: Vue (new!)
+- Framework: Vue :new:

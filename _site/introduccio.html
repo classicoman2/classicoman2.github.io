@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Introduccio a Javascript | The Monuments</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="Introduccio a Javascript" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Pàgina amb els apunts de les meves assignatures." />
+<meta property="og:description" content="Pàgina amb els apunts de les meves assignatures." />
+<link rel="canonical" href="http://localhost:4000/introduccio" />
+<meta property="og:url" content="http://localhost:4000/introduccio" />
+<meta property="og:site_name" content="The Monuments" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/introduccio","description":"Pàgina amb els apunts de les meves assignatures.","headline":"Introduccio a Javascript","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=3dfc9afb7322cf5592399fc7ff777a6e6283db44">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">The Monuments</a></h1>
+        
+        
+
+        <p>Pàgina amb els apunts de les meves assignatures.</p>
+
+<!--
+        
+        <p class="view"><a href="https://github.com/classicoman2/classicoman2.github.io">View thhe Project on GitHub <small>classicoman2/classicoman2.github.io</small></a></p>
+        
+-->
+        
+
+        
+      </header>
+      <section>
+
+      <h1 id="1-introducció-a-javascript">1 Introducció a Javascript</h1>
+
+<!-- toc -->
+
+<ul>
+  <li><a href="#1-marc-de-treball">1. Marc de treball</a>
+    <ul>
+      <li><a href="#eines-recomanades">Eines recomanades</a>
+        <ul>
+          <li><a href="#entorn-vsc">Entorn VSC</a></li>
+          <li><a href="#organitzacio-de-dades-git-github-recomanacions">Organització de dades, git, github (recomanacions)</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#2-escriure-codi-en-js">2 Escriure codi en JS</a>
+    <ul>
+      <li><a href="#practiques-recomanables">Pràctiques Recomanables</a>
+        <ul>
+          <li><a href="#punts-i-coma">Punts i Coma</a></li>
+          <li><a href="#espais-en-blanc">Espais en Blanc</a></li>
+          <li><a href="#blocs">Blocs</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#3-mostrar-dades-per-la-interficie">3. Mostrar dades per la interfície</a></li>
+  <li><a href="#4-escriptura-devents-basic">4. Escriptura d’events (bàsic)</a></li>
+</ul>
+
+<!-- tocstop -->
+
+<p>Lectures interessants:</p>
+<ul>
+  <li><a href="https://developer.mozilla.org/ca/docs/Web/JavaScript">Javascript a MDN</a></li>
+  <li><a href="https://elpais.com/tecnologia/2020-08-28/el-lenguaje-de-programacion-que-cambio-la-web-y-tu-vida-cumple-25-anos.html?rel=cla_articulo#1598695534986">El lenguaje de programación que cambió la web (y tu vida) cumple 25 años</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/ECMAScript">ECMAScript</a></li>
+</ul>
+
+<h2 id="1-marc-de-treball">1. Marc de treball</h2>
+<h3 id="eines-recomanades">Eines recomanades</h3>
+
+<h4 id="entorn-vsc">Entorn VSC</h4>
+<p>Per aquest curs, recomano emprar l’entorn de desenvolupament Visual Studio Code</p>
+
+<p>És molt pràctic aprendre a crear un <strong>Workspace</strong>. Un workspace permet ajustar les extensions adequades a cada entorn de treball (Javascript, HTML, programació back, …) per tal de treballar més còmodament i d’una forma més eficient.</p>
+
+<h4 id="organització-de-dades-git-github-recomanacions">Organització de dades, git, github (recomanacions)</h4>
+
+<ul>
+  <li>Directori de Pràctiques
+    <ul>
+      <li>Crea en el teu ordinador un directori específic on guardar els Projectes.</li>
+    </ul>
+  </li>
+  <li>Exercicis i Proves
+    <ul>
+      <li>T’aconsello crea un directori associat a un repositori git per guardar exercicis de classe.</li>
+    </ul>
+  </li>
+  <li>Pràctiques
+    <ul>
+      <li>Crea un directori per cada pràctica i un repositori Github al teu compte corporatiu.</li>
+      <li>Les pràctiques serà obligatori pujar-les i entregar-les a un repositori de Github per mitjà d’una <em>Release</em></li>
+      <li>Cal anar pujant els canvis que facis en el codi al teu repositori remot amb <em>commits</em> i si és possible, emprant <a href="https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716">missatges semàntics de commit</a></li>
+      <li>En els treballs en grup, s’han de fer <em>Pull Request</em> i <em>Merge</em>, a més de revisions de codi (zzzzz)sempre que sigui necessari.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="2-escriure-codi-en-js">2 Escriure codi en JS</h2>
+<p><a href="https://www.w3schools.com/js/js_statements.asp">Font</a></p>
+<h3 id="pràctiques-recomanables">Pràctiques Recomanables</h3>
+
+<h4 id="punts-i-coma">Punts i Coma</h4>
+<ul>
+  <li>Els punts i coma no son obligatoris, però s’acostumen a emprar.</li>
+  <li>Gràcies als punts i coma, es poden posar varies instruccions en una sola linea, encara que no és reconamable fer això
+    <h4 id="espais-en-blanc">Espais en Blanc</h4>
+  </li>
+  <li>JS ignora espais en blanc entre operadors, operands i entre instruccions o dins dels parèntesi de les funcions.</li>
+  <li>Emprarem espais en blanc per millorar la <strong>llegibilitat</strong> del codi.</li>
+  <li>Per norma general, cal evitar les línies massa llargues - més de <strong>80 linies</strong>
+    <h4 id="blocs">Blocs</h4>
+  </li>
+  <li>Els blocs es defineixen entre { }</li>
+  <li>Cada vegada que cream un bloc, introduirem sagnat (indentació). Un sagnat de 2 espais és suficient</li>
+</ul>
+
+<h2 id="3-mostrar-dades-per-la-interfície">3. Mostrar dades per la interfície</h2>
+<p><a href="https://www.w3schools.com/js/js_output.asp">Font</a></p>
+<ul>
+  <li>La propietat <code class="language-plaintext highlighter-rouge">innerHTML</code> permet escriure dins d’un element HTML5</li>
+  <li>El mètode <code class="language-plaintext highlighter-rouge">document.write()</code> escriu directament a una pàgina web, esborrant el que hi havia prèviament dins del <code class="language-plaintext highlighter-rouge">body</code> del document</li>
+  <li><code class="language-plaintext highlighter-rouge">window.alert()</code> mostra una finestra d’alerta</li>
+  <li><code class="language-plaintext highlighter-rouge">console.log()</code> escriu en la consola d’errors emprant. És útil per <strong>depurar codi</strong> a un nivell elemental</li>
+</ul>
+
+<h2 id="4-escriptura-devents-bàsic">4. Escriptura d’events (bàsic)</h2>
+<p><a href="https://www.w3schools.com/js/js_events.asp">Font</a>
+Els events són situacions que es produeixen mentre el navegador està en marxa i que poden afectar el funcionament del script de Javascript</p>
+
+<p>Alguns exemples d’events:</p>
+<ul>
+  <li>Una pàgina web ha acabat de carregar-se</li>
+  <li>El contingut d’un camp &lt;input&gt; ha canviat</li>
+  <li>Un element &lt;button&gt; ha estat clicat</li>
+</ul>
+
+<p>Cada event necessita un event handler per a indicar quin codi s’ha d’executar quan se produeix l’event. Exemple:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onclick</span><span class="o">=</span><span class="dl">"</span><span class="s2">console.log('has clicat')</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Espitja</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span></code></pre></div></div>
+<p>Alguns events (que tractarem més endavant en el curs):</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">onchange</code>: An HTML element has been changed</li>
+  <li><code class="language-plaintext highlighter-rouge">onclick</code>: The user clicks an HTML element</li>
+  <li><code class="language-plaintext highlighter-rouge">onmouseover</code>: The user moves the mouse over an HTML element</li>
+  <li><code class="language-plaintext highlighter-rouge">onkeydown</code>: The user pushes a keyboard key</li>
+</ul>
+
+<p><a href="https://www.w3schools.com/jsref/dom_obj_event.asp">Llista completa d’events DOM</a></p>
+
+<ol>
+  <li>Llocs on es pot escriure codi Javascript
+<a href="https://www.w3schools.com/js/js_whereto.asp">Font</a></li>
+</ol>
+
+<p>L’opció més directa d’escriure un script en JS és emprar les etiquetes &lt;script&gt; i &lt;/script&gt;</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">demo</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">My First JavaScript</span><span class="dl">"</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre></div></div>
+<p>Els blocs de codi poden situar-se en molts llocs:</p>
+
+<ol>
+  <li>Al <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> del document html. Exemple</li>
+  <li>Al <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> del document html. Exemple</li>
+  <li>Per evitar problemes de càrrega (que veurem més endavant en aquest apartat), es pot situar el bloc d’script entre les etiquetes <code class="language-plaintext highlighter-rouge">&lt;/body&gt;</code>  i  <code class="language-plaintext highlighter-rouge">&lt;/html&gt;</code></li>
+</ol>
+
+<p>L’opció més “professional” és escriure els scripts en un arxiu extern, normalment amb extensió .js</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">myScript.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre></div></div>
+<p>Emprar un fitxer extern té els següents avantatges:</p>
+<ol>
+  <li>Separa HTML del codi</li>
+  <li>Fan que el codi Js sigui més bon de mantenir i llegir</li>
+  <li>Els fitxers JS poden ser guardats en <em>cache</em> i augmentar així la seva velocitat de càrrega</li>
+</ol>
+
+<p><strong>ALERTA!</strong> Quan escric el meu codi JS en un fitxer extern, les línies que s’hagin d’executar immediatament en carregar el fitxer han d’anar a dins d’aquesta funció <em>hook</em>:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="c1">// To-do: Write here your JS code</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">demo</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">My First JavaScript</span><span class="dl">"</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<p>La raó és que el DOM - o sigui, els elements HTML de la pàgina web - ha d’estar carregat si volem fer alguna accció amb aquests elements HTML, com en el següent exemple:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Exemple</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/classicoman2/guide_javascript/blob/master/01/load_script_problem.html">load_script_problem.html</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>Amplia informació sobre <code class="language-plaintext highlighter-rouge">onload</code> al <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload">tutorial de MDN</a></p>
+</blockquote>
+
+<p>Podem insertar un fitxer .js tant amb ruta absoluta com amb una ruta relativa (normalment, emprarem rutes absolutes només per llibreries externes CDN).</p>
+
+<p>Exemples:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">https://www.w3schools.com/js/myScript1.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">/js/myScript1.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">myScript1.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+
+      </section>
+      <footer>
+        
+        <p>Pàgina mantenida per <a href="https://github.com/classicoman2">classicoman2</a> &copy;</p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+  <script>
+    console.log("Prova de Javascript")
+  </script>
+</html>

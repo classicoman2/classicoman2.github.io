@@ -33,7 +33,7 @@ body {
   }
   section {
     width: auto;
-    padding: 10px 15px;
+    padding: 10px 50px;
     margin-top: 40px;
   }
   footer {
@@ -51,4 +51,11 @@ p {
 
 li {
   line-height: 1.8em;
+}
+
+
+@media only screen and (max-width: 600px) {
+  section {
+    padding: 10px 5px;
+  }
 }

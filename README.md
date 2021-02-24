@@ -3,6 +3,7 @@ Apunts de les assignatures de Grau Superior en Desenvolupament Web. Site desenvo
 [JEKYLL CHEAT SHEET](./documentation/README.MD)
 
 ## TO-DO
+- [ ] Responsive no funcionen Media Queries?
 - [x] Iniciada _Jekyll Cheat Sheet_
 - [ ] Crear iterador de `Markdown-toc` amb node que crei toc en tots els fitxers d'un directori (i successius subdirectoris)
 - [ ] Add menu & subsections in page, [info](https://pmarsceill.github.io/just-the-docs/docs/navigation-structure/#pages-with-children)

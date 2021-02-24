@@ -1,11 +1,11 @@
 {
   "name": "classicoman2.github.io",
   "version": "1.0.0",
-  "description": "Pàgina web del Professor",
+  "description": "Pàgina web de Classicoman",
   "scripts": {
     "serve": "bundle exec jekyll serve",
     "build": "bundle exec jekyll build",
-    "toc": "markdown-toc -i docs/dwec/regexpr.md"
+    "toc": "markdown-toc -i docs/dwec/introduccio.md"
   },
   "repository": {
     "type": "git",

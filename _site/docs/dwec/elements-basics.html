@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>The Monuments | Pàgina amb els apunts de les meves assignatures.</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="The Monuments" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Pàgina amb els apunts de les meves assignatures." />
+<meta property="og:description" content="Pàgina amb els apunts de les meves assignatures." />
+<link rel="canonical" href="http://localhost:4000/docs/dwec/elements-basics.html" />
+<meta property="og:url" content="http://localhost:4000/docs/dwec/elements-basics.html" />
+<meta property="og:site_name" content="The Monuments" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/docs/dwec/elements-basics.html","description":"Pàgina amb els apunts de les meves assignatures.","headline":"The Monuments","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=3dfc9afb7322cf5592399fc7ff777a6e6283db44">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">The Monuments</a></h1>
+        
+        
+
+        <p>Pàgina amb els apunts de les meves assignatures.</p>
+
+<!--
+        
+        <p class="view"><a href="https://github.com/classicoman2/classicoman2.github.io">View thhe Project on GitHub <small>classicoman2/classicoman2.github.io</small></a></p>
+        
+-->
+        
+
+        
+      </header>
+      <section>
+
+      
+<p>1.2_Elements bàsics
+1_Sintaxi bàsica de JS [##]{.ul}
+La sintaxi de JS comprèn totes aquelles normes que estableixen com toca escriure les instruccions: com declarar variables, com assignar valors, com realitzar operacions, etc..</p>
+
+<p>Literals
+Els nombres poden tenir o no decimals. El decimal es marca amb un punt</p>
+
+<p>Els strings poden escriure’s entre “ “ o entre ‘ ‘</p>
+
+<p>Els booleans s’escriuen com true i false</p>
+
+<p>Podem assignar el literal null a una variable, que significa que no té valor. (Més endavant veurem quin ús té null i en quins casos ens el podem trobar)</p>
+
+<p>Variables
+Les variables són contenedors per a guardar-hi valors</p>
+
+<p>En JS, no és imprescindible declarar les variables. Els podem assignar un valor automàticament i això farà innecessària la seva declaració.</p>
+
+<p>Tanmateix, és bona idea seguir el costum de declarar les variables, emprant el tradicional var (variables globals), let (variables locals) i const (ho veurem [més endavant]{.ul})</p>
+
+<p>Algunes normes a l’hora d’escriure els noms de les variables:</p>
+
+<p>JS és case sensitive, o sigui, és sensible a majúscules i una</p>
+
+<p>variable és diferent del seu equivalent en majúscules. Un [Exemple]{.ul}</p>
+
+<p>El primer caràcter d’una variable ha de ser una lletra, un</p>
+
+<p>underscore (_) o bé el signe de dòlar ($) (aquest darrer cas no el recoman en JS)</p>
+
+<p>L’ús de guions en les variables no està permès, underscore _ en</p>
+
+<p>canvi, sí</p>
+
+<p>És un bon costum emprar camel case per declarar variables amb 2</p>
+
+<p>o més paraules, exemple: firstName, lastName, cityCode…</p>
+
+<p>Exemple [variables_names.html]{.ul}</p>
+
+<p>Operadors i expressions.
+Les expressions poden contenir tant variables com literals. Veurem
+més sobre operadors i expressions al proper capitol</p>
+
+<p>Unicode
+JavaScript empra el conjunt de caràcters Unicode. Unicode</p>
+
+<p>cobreix gairebé tots els caràcters i símbols existents.</p>
+
+<p>Per a més info, [[Complete Unicode</p>
+
+<p>Reference]{.ul}](https://www.w3schools.com/charsets/ref_html_utf8.asp).</p>
+
+<p>2_Comentaris (bàsic) [#]{.ul}
+Les maneres usuals d’escriure comentaris són:</p>
+
+<p>Comentari unilinia a sobre d’una expressió.</p>
+
+<p>[Exemple]{.ul}</p>
+
+<p>Comentari unilinia a la mateixa línia.</p>
+
+<p>[Exemple]{.ul}</p>
+
+<p>Comentari multilinia.</p>
+
+<p>[Exemple]{.ul}</p>
+
+<p>Apart de seguir l’estàndard JSDoc en funcions i altres construccions abstractes, només cal comentar allò que pot ajudar un altre/a programador/a a entendre com funciona el vostre codi (aquest/a programador/a podeu ser vosaltres mateixos al cap d’un temps!)</p>
+
+<p>Els comentaris són molt útils també per [prevenir l’execució d’un bocí de codi]{.ul}.</p>
+
+<p>Alerta! No abuseu dels comentaris per aquesta funcionalitat,</p>
+
+<p>podrieu acumular grans quantitats de codi inservible que dificultarien la llegibilitat del vostre codi.</p>
+
+<p>Quan entregau un codi o el penjau a un repositori, NO hi hauria</p>
+
+<p>d’haver blocs de codi anulats amb comentaris → mala llegibilitat i genera confusió</p>
+
+<p>3_Funcions [#]{.ul}
+Una funció és un troç de codi que empra uns valors passats per paràmetre, realitza una tasca concreta i torna uns resultats</p>
+
+<p>Una funció es declara quan es defineix el seu comportament, i quan es necessita es crida o s’invoca. [Exemple]{.ul}</p>
+
+<p>Les funcions poden emprar-se múltiples vegades</p>
+
+<p>Sintaxi de la funció
+function name(parameter1, parameter2, parameter3) {</p>
+
+<p>//Code to be executed</p>
+
+<p>}</p>
+
+<p>Una funció és declara amb la keyword function seguida del nom i els parèntesis</p>
+
+<p>Els noms de les funcions segueixen les mateixes normes que els [noms de les variables]{.ul}</p>
+
+<p>Puc emprar una funció maldament l’hagi declarada amb posterioritat al seu ús, gràcies al [hoisting]{.ul}:</p>
+
+<p>Exemple [function_declaration.html]{.ul}</p>
+
+<p>Paràmetres
+Dins dels parèntesis, es poden especificar cap, un o més paràmetres</p>
+
+<p>Els paràmetres, si son valors simples (integer, real, string o boolean) se passen per valor</p>
+
+<p>Els paràmetres, si son arrays o objects, se passen per referència.</p>
+
+<p>Repassa! Quina diferència hi ha entre passar per valor i passar per referència?</p>
+
+<p>Exemple [function-parameters.html]{.ul}</p>
+
+<p>Return
+Quan apareix una sentència de tipus return la funció deixa d’executar-se</p>
+
+<p>El valor de retorn pot ser un literal, una expressió o la invocació d’una altra funció</p>
+
+<p>[Exemple bàsic]{.ul} de funció que retorna</p>
+
+<p>Comentar una funció amb JSDoc
+En crear una funció, cal que la documentem emprant el format JSDoc. [Més info sobre el format JSDoc]{.ul}</p>
+
+<p>Exemple [function-commented.js]{.ul}</p>
+
+<p>Per a que es generi automàticament el format de documentació JSDocs, escriu /** a la línia immediatament superior a la declaració de la funció i espitja intro</p>
+
+<p>Més info sobre JSDoc:</p>
+
+<p>[https://javascript.info/comments]{.ul}</p>
+
+<p>[https://en.wikipedia.org/wiki/JSDoc]{.ul}</p>
+
+<p>Altres
+Les cridades a funcions poden emprar-se en expressions, com els</p>
+
+<p>literals i variables. [Exemple]{.ul}</p>
+
+<p>En JS es poden passar funcions per paràmetre d’altres funcions.</p>
+
+<p>Això ho veurem més endavant.</p>
+
+<p>s1.3 Variables, operadors i tipus de dades
+1_Variables i àmbits [##]{.ul} [##]{.ul}
+Variables
+Continuant amb el que hem vist anteriorment sobre variables:</p>
+
+<p>Els noms de variables no poden coincidir amb el de les *[[paraules</p>
+
+<p>reservades]{.ul}](https://www.w3schools.com/js/js_reserved.asp)* de Javascript (per exemple: if, return, let, var… )</p>
+
+<p>Se poden declarar vàries variables en una sola instrucció →</p>
+
+<p>[Exemple]{.ul}</p>
+
+<p>La declaració de les variables pot ocupar només una instrucció i</p>
+
+<p>vàries linies. [Exemple]{.ul}</p>
+
+<p>ReferenceError
+Si llegim el valor d’una variable que no ha estat declarada ni inicialitzada, se produirà un [error de Referència]{.ul}, que se’ns mostrarà per consola amb un missatge semblant a:</p>
+
+<p>ReferenceError: <nomdelavariable> is not defined</nomdelavariable></p>
+
+<p>Undefined
+Una variable té valor undefined quan ha estat declarada però no ha estat inicialitzada</p>
+
+<p>El més normal és que declarem i inicialitzem una variable i per tant, la primera vegada que l’emprem, ja tengui un valor. Una variable amb valor undefined ens pot crear problemes innecessàriament.</p>
+
+<p>Exemple [variable_undefined.js]{.ul}</p>
+
+<p>Variables Globals
+Les variables que son declarades i/o inicialitzades en l’àmbit global de l’script (fora de les funcions o dels blocs) se diuen variables globals</p>
+
+<p>Les variables globals poden ser llegides i modificades dins de les funcions</p>
+
+<p>L’àmbit global és l’entorn de l’objecte window. Totes les variables globals (les declarades i les no declarades) pertanyen a l’objecte window</p>
+
+<p>Atenció: [Se considera una mala pràctica treballar amb variables globals si no és imprescindible]{.ul}, perquè es poden produir situacions de sobreescriptura (overwrite) de variables o funcions de l’objecte window.</p>
+
+<p>El [temps de vida]{.ul} de les variables globals comença quan son declarades o inicialitzades i acaba quan finalitza l’script on estan incloses. En un navegador, les variables globals perden el seu valor quan es tanca el navegador o la pestanya.</p>
+
+<p>RECOMANACIÓ: Declarar sempre totes les variables.
+Exemple [variable-scope-01.js]{.ul} (Execute this code with nodejs)</p>
+
+<p>Variables Locals
+Una variable local declarada dins d’una funció, només pot ser emprada en aquest àmbit. No pot ser emprada per les altres funcions</p>
+
+<p>RECOMANACIÓ: declara les variables locals amb let enlloc de var</p>
+
+<p>Hoisting [##]{.ul}
+Hoisting és un mecanisme pel qual les declaracions de variables i de funcions són pujades o hissades (hoisted) al començament de l’àmbit o bloc de codi</p>
+
+<p>Hoist significa elevar, hissar</p>
+
+<p>Concepte fonamental del Hoisting:</p>
+
+<p>Si llegim una variable abans que sigui [declarada]{.ul}, el valor</p>
+
+<p>que obtendrem serà Undefined</p>
+
+<p>Si llegim una variable abans que sigui [inicialitzada]{.ul}, se</p>
+
+<p>produiria un error Uncaught ReferenceError: not defined</p>
+
+<p>Exemple [variable-hoisting.js]{.ul}</p>
+
+<p>IMPORTANT! Declara SEMPRE les variables abans d’emprar-les.</p>
+
+<p>ALERTA! Quan empram let i const no hi ha hoisting (Veurem això més endavant)</p>
+
+<p>Curiositat: Es possible declarar una variable amb posterioritat al
+moment en què ha estat assignada i hoisted –&gt; [Exemple]{.ul}</p>
+
+<p>Si desitjau llegir més sobre Hoisting a JS:</p>
+
+<p>[[Understanding Javascript</p>
+
+<p>Hoisting]{.ul}](https://blog.bitsrc.io/what-is-javascript-hoisting-f0678208eb08)</p>
+
+<p>[[Quina és la diferència entre una variable declarada i una variable</p>
+
+<p>no declarada?]{.ul}](https://stackoverflow.com/questions/15985875/effect-of-declared-and-undeclared-variables)</p>
+
+<p>[[Understanding Hoisting in</p>
+
+<p>Javascript]{.ul}](https://www.digitalocean.com/community/tutorials/understanding-hoisting-in-javascript)</p>
+
+<p>2_let, const, strict mode
+let [#]{.ul}
+Emprarem let per declarar les nostres VARIABLES LOCALS o d’àmbit de bloc</p>
+
+<p>Malgrat és possible declarar variables globals amb let, és millor emprar var.</p>
+
+<p>Exemple d’us de let</p>
+
+<p>Exemple [block-scope-let1.js]{.ul}</p>
+
+<p>Les variables declarades amb let no tenen hoisting, com pots veure en aquest exemple:</p>
+
+<p>Exemple [block-scope-let2.js]{.ul}</p>
+
+<p>Curiositats</p>
+
+<p>Les variables declarades amb let no pertanyen a l’objecte</p>
+
+<p>window, com sí passava amb les declarades amb var → [Exemple]{.ul}</p>
+
+<p>Els keywords let i const van ser introduïts en la versió</p>
+
+<p>ECMASCRIPT 2015 (Versió 6) per proporcionar el que s’anomena [àmbit de bloc]{.ul} a les variables (Fins llavors, només hi havia àmbit global i àmbit local)</p>
+
+<p>Altres coses
+Redeclarar variables en diferents àmbits amb var o inclús amb
+let no és recomanable, ja que pot crear confusió sobre quin valor de la variable i interfereix en la funcionalitat / modularitat que desitjam pels nostres codis. [Exemple]{.ul}</p>
+
+<!-- -->
+<p>En els bucles, <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_let_for_loop1">[empra preferentmet]{.ul}
+[let]{.ul}</a> per definir les variables. Si [empres]{.ul} [var]{.ul}, aquella variable serà accessible des de fora del bloc for { } la qual cosa no és desitjable.</p>
+
+<p>const
+Les variables declarades amb const funcionen igual que les declarades amb let, excepte per una cosa: no se’ls pot assignar un valor més d’un cop</p>
+
+<p>També tenen àmbit de bloc, com les variables declarades amb let</p>
+
+<p>No tenen hoisting</p>
+
+<p>Les variables que són declarades amb const se’ls assigna un valor en la mateix moment en què són declarades, en la mateixa instrucció.</p>
+
+<p>Exemple [const.js]{.ul}</p>
+
+<p>Objectes i arrays constants
+Quan declaram un objecte amb const, no li podrem assignar un altre valor. [Exemple]{.ul}</p>
+
+<p>No obstant, sí que podem canviar el valor de les propietats de l’objecte [Exemple]{.ul}</p>
+
+<p>Amb arrays passa exactament el mateix: puc [canviar els valors de les caselles]{.ul} però no puc [reasignar una variable array declarada amb const]{.ul}</p>
+
+<p>Strict Mode [#]{.ul}
+La directiva “use strict” és un literal que s’empra per establir que el codi JS s’executi en mode estricte. Amb mode estricte, NO podem assignar valor a una variable sense haver-la declarat abans!</p>
+
+<p>Curiositat: És una directiva apareguda a ECMAScript version 5. Ja està disponible en tots els navegadors (inclòs IE)</p>
+
+<p>També pot emprar-se strict mode dins de funcions i de mòduls</p>
+
+<p>Ampliar: Més sobre [strict mode al Tutorial MDN]{.ul}</p>
+
+<p>Exemple [strict-mode.js]{.ul}</p>
+
+<p>3_Operadors
+Operadors bàsics [##]{.ul}
+Operadors aritmètics . Precedència de les operacions</p>
+<ul>
+  <li>
+    <ul>
+      <li>
+        <ul>
+          <li>/ ** exponent % mòdul ++ increment – decrement</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Precedència d’operacions
+L’avaluació de les expressions que empren operadors es fa d’esquerra</p>
+
+<p>a dreta</p>
+
+<p>L’operació de multiplicació precedeix la suma o la resta (com és</p>
+
+<p>tradicional en matemàtiques)</p>
+
+<p>En general, multiplicació i divisió tenen precedència sobre suma i</p>
+
+<p>resta</p>
+
+<p>Per canviar la precedència, emprarem parèntesi.</p>
+
+<p>[Exemple]{.ul}</p>
+
+<p>Assignacions especials
+= += - = *= /= %= **=</p>
+
+<p>Podem emprar + per concatenar strings. També +=
+<!-- -->
+La suma d’un string i un nombre dóna com a resultat un string</p>
+
+<p>[[ANNEX: Altres tipus d’assignacions complexes que no</p>
+
+<p>emprarem]{.ul}](https://www.w3schools.com/js/js_assignment.asp)</p>
+
+<p>Operadors de comparació
+Emprats en condicionals i bucles.
+== === ! = !== &gt; &lt; &gt;= &lt;= ?</p>
+
+<p>Operadors lògics
+! negació || or &amp;&amp; and</p>
+
+<p>Objecte MATH [##]{.ul}
+Aquest objecte incorpora una gran quantitat de mètodes matemàtics que podem emprar per resoldre operacions complexes que no estan expressades amb operadors simples.</p>
+
+<p>Podem realitzar operacions com: càlcul de potències, obtenir un número aleatori, arrodonir un nombre real a un nombre sencer, etc.</p>
+
+<p>4_Tipus de Dades
+Tipus de Dades bàsics [##]{.ul}
+Els tipus de dades són un concepte important en programació</p>
+
+<p>En JS, els tipus de dades són dinàmics. Això vol dir que poden ser emprats per emmagatzemar diversos tipus de dades en un mateix bloc de codi. [Exemple]{.ul}</p>
+
+<p>Strings: Poden ser creats entre “ “ i entre ‘ ‘ . (Podem emprar</p>
+
+<p>el caràcter “ dins de ‘ i viceversa)</p>
+
+<p>Numbers: Els nombres, sencers o reals (amb decimals) corresponen</p>
+
+<p>a un sol tipus de dades. Ocasionalment, s’empra notació exponencial per nombres molt grans o molt petits. [Exemple]{.ul}</p>
+
+<p>Booleans: Dos valors literals possibles, true i false. Les</p>
+
+<p>expressions de comparació resulten en valors booleans. [Exemple]{.ul}</p>
+
+<p>Arrays: Els arrays son un tipus compost d’elements del mateix</p>
+
+<p>tipus de dades, que es crea emprant square brackets [ ].</p>
+
+<p>Els índexos estan basats en 0 (el primer element d’un array anomenat taula és taula[0]. [Exemple]{.ul}</p>
+
+<p>Objectes: Els objectes son un tipus compost d’elements o
+propietats de diferents tipus, que es crea emprant curly braces { }.</p>
+
+<p>Per referenciar la propietat d’un objecte, empram en nom de l’objecte seguit de punt i nom de propietat. [Exemple]{.ul} Els objectes són fonamentals en la programació en JS.</p>
+
+<p>L’Operador de tipus: typeof
+A JS, trobam 5 tipus de dades que poden conterir valors:
+string number boolean object function</p>
+
+<p>Empram loperador typeof operator per esbrinar el tipus de dades
+d’una variable. [Exemple]{.ul}. [Exemple2]{.ul}</p>
+
+<p>Exemple [typeof.html]{.ul}</p>
+
+<p>L’operador typeof sempre retorna un string
+Valor buid vs. null vs. valor undefined
+[Buid]{.ul}</p>
+
+<p>No té res a veure un valor undefined amb un valor buid</p>
+
+<p>Una variable té valor undefined si la variable ha estat declarada però no assignada. En strings, el valor buit és “” o ‘’. En els nombres, el valor buid seria el 0. No és igual 0 que undefined</p>
+
+<p>[Null]{.ul}</p>
+
+<p>El valor null en una variable indica que no té valor.</p>
+
+<p>El valor null procedeix de la programació en llenguatge C i servia per indicar un punter buid. Javacript no empra punters, almanco no en el sentit que tenien en la programació en C.</p>
+
+<p>undefined i null tenen el mateix valor però tenen diferent tipusare equal in value but different in type:</p>
+
+<p>null == undefined // true</p>
+
+<p>null === undefined // false</p>
+
+<p>typeof undefined // undefined</p>
+
+<p>typeof null // object</p>
+
+<p>1.4 Executar js amb Node
+Escric el codi a un fitxer que se digui com se digui, per ex,</p>
+
+<p>operacions.js</p>
+
+<p>Al final d’aquest fitxer, que hauria de contenir només funcions i</p>
+
+<p>classes (res de codi interactiu), escriu el codi que vols provar, per exemple:</p>
+
+<p>Console.log (suma (2,3) )</p>
+
+<p>Per acabar, executa el fitxer amb</p>
+
+<h1 id="node-operacionsjs">node operacions.js</h1>
+
+<p>1.5 Control d’execució
+1_Càrrega de llibreries i fitxers
+Obrir el nostre navegador (Firefox, Chrome).</p>
+
+<p>Pulsar Ctrl + Shift + I i anar a la pestanya Sources</p>
+
+<p>Allà podrem veure les fitxers que s’han carregat: fitxers html, js, css, imatges, etc.</p>
+
+<p>També hi surten les peticions API que realitzi la nostra aplicació (això ho veurem al segon trimestre)</p>
+
+<p>2_La importàcia de saber fer Debug
+És molt important que tenguem clar, des del primer dia, que per a saber programar en Front End hem de saber emprar el Debugger de Javascript.</p>
+
+<p>A classe, emprarem sempre els debugger del navegador. Opcionalment, podeu emprar emprar el Debugger del seu editor de codi si així ho desitjau.</p>
+
+<p>El debug o Depuració consta de diverses parts:</p>
+
+<p>Detecció d’errors i descripció d’errors en la Console del</p>
+
+<p>navegador</p>
+
+<p>Interrompre l’execució d’un codi amb Breakpoints per tal</p>
+
+<p>d’analitzar el procés d’execució i els valors de les variables</p>
+
+<p>Emprar les eines de desplaçament en l’execució del codi: Step</p>
+
+<p>Into, Step Over, etc. per avançar en el codi i en la depuració d’aquest</p>
+
+<p>Fer seguiment o vigilància (Watch) del valor de les variables</p>
+
+<p>durant l’execució</p>
+
+<p>Debug nivell 1
+El més fàcil és emprar missatges. No obstant, això només serveix a un nivell molt bàsic, com, per exemple quan empram el terminal i [executam el codi amb l’ajut de]{.ul} [node]{.ul}.</p>
+
+<p>console.log() Missatge de consola.</p>
+
+<p>console.log() és molt útil per fer seguiment del valor de les
+variables</p>
+
+<p>Per veure els missatges de la consola,</p>
+
+<p>Clica Ctrl + Mayús + I</p>
+
+<p>En el panel desplegat, clica sobre Console per a veure els</p>
+
+<p>fallo</p>
+
+<p>alert() - finestra de missatge (no massa pràctic)</p>
+
+<p>Exemple [debug-basic.html]{.ul}</p>
+
+<p>Debug nivell 2
+El que hem vist abans és molt bàsic i no em permet investigar a fons en el problema que me provoca el bug o error.</p>
+
+<p>Curiositat: debug significa originalment desparasitar, desinsectar, i ve de bug: insecte, virus (i per extensió: error informàtic)
+Emprarem Google Chrome. En els altres navegadors, les eines són molt similars.</p>
+
+<p>Clica Ctrl + Mayús + I i Clica sobre Sources</p>
+
+<p>Trobaràs que el panell se divideix en tres parts, d’esquerra a</p>
+
+<p>dreta:</p>
+
+<p>Page -&gt; pots seleccionar la pàgina o fitxer on es troba el codi</p>
+
+<p>El codi de la pàgina</p>
+
+<p>Les opcions de depuració . A sobre, hi ha les eines de</p>
+
+<p>desplaçament que veurem més endavant (veure imatge a sota)</p>
+
+<p>{width=”1.9951388888888888in” height=”2.151388888888889in”}</p>
+
+<p>Ara veurem com depurar 1 linia del codi anterior. En el nostre cas,</p>
+
+<p>aquella en la que es fa la suma. Per això, hi crearem un breakpoint i refrescarem la pàgina.</p>
+
+<p>Si ara passo el punter del ratolí per sobre de les variables n1 i</p>
+
+<p>n2, puc comprovar que aquestes variables tenen valors de diferents tipus. Per tant, és d’esperar que l’error sigui aquest (és un exemple molt senzill)</p>
+
+<p>Més coses que puc fer:</p>
+
+<p>A la columna de la dreta, si desplego Scope → Global, tendré</p>
+
+<p>accés a les variables globals n1 i n2</p>
+
+<p>També puc saber el valor de les variables si clico + a la</p>
+
+<p>dreta de Watch i introdueixo el nom de la variable. També hi puc ficar expressions, com per exemple n1 + n2</p>
+
+<p>Exemple [debug-basic.html]{.ul}</p>
+
+<p>Debug nivell 3
+Provarem en el codi del següent exemple:</p>
+
+<p>Exemple [debug-basic2.html]{.ul}</p>
+
+<p>{width=”2.7868055555555555in” height=”0.35208333333333336in”}</p>
+
+<p>Els botons son (en blau els que cal saber):</p>
+
+<p>Resume script execution - continua l’execucio fins el següent</p>
+
+<p>breakpoint o fins el final si no hi ha més breakpoints</p>
+
+<p>Passa a la següent funció (F10) - Bota a la següent cridada de</p>
+
+<p>funció</p>
+
+<p>Step into - Permet saltar entre diferents funcions i ens mostra</p>
+
+<p>el valor dels paràmetres de la funció, la qual cosa és molt ùtil i permet saltar-nos blocs d’instruccions que no ens interessen</p>
+
+<p>Step out - Surt de la funció actual</p>
+
+<p>Step - avança 1 instrucció</p>
+
+<p>Deactivate Breakpoints - desactiva els breakpoints per la actual</p>
+
+<p>finestra del navegador</p>
+
+<p>Més info:</p>
+
+<p>[https://developers.google.com/web/tools/chrome-devtools/javascript/]{.ul}</p>
+
+
+      </section>
+      <footer>
+        
+        <p>Pàgina mantenida per <a href="https://github.com/classicoman2">classicoman2</a> &copy;</p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+  <script>
+    console.log("Prova de Javascript")
+  </script>
+</html>

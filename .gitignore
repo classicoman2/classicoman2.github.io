@@ -9,5 +9,6 @@
 #.jekyll-metadata
 vendor
 
-# per _nodejs-server/server.js
 node_modules
+
+.sass-cache
