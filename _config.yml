@@ -26,8 +26,8 @@ github_username:  classicoman2
 markdown: kramdown
 theme: jekyll-theme-minimal
 
-sass:
-  sass_dir: assets/css
+#theme: just-the-docs
+
 
 plugins:
   - jekyll-feed
