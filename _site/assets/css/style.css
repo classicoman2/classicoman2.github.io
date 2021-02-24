@@ -221,7 +221,7 @@ body { padding: 0px; margin: 0; }
 .wrapper { width: auto; display: flex; flex-direction: column; padding-left: 0px; }
 .wrapper section { width: auto; padding: 10px 50px; margin-top: 40px; }
 
-h2 { font-size: 1.2em; }
+h2 { padding-top: 20px; font-size: 1.2em; }
 
 p { line-height: 0.9em; }
 

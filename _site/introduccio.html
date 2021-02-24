@@ -19,7 +19,7 @@
 {"@type":"WebPage","url":"http://localhost:4000/introduccio","description":"Pàgina amb els apunts de les meves assignatures.","headline":"Introduccio a Javascript","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=3dfc9afb7322cf5592399fc7ff777a6e6283db44">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e7802a6a7be61d4278ded8c8dabf6a287aa4ae22">
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -72,6 +72,7 @@
   </li>
   <li><a href="#3-mostrar-dades-per-la-interficie">3. Mostrar dades per la interfície</a></li>
   <li><a href="#4-escriptura-devents-basic">4. Escriptura d’events (bàsic)</a></li>
+  <li><a href="#5-llocs-on-es-pot-escriure-codi-javascript">5. Llocs on es pot escriure codi Javascript</a></li>
 </ul>
 
 <!-- tocstop -->
@@ -121,14 +122,18 @@
 <h4 id="punts-i-coma">Punts i Coma</h4>
 <ul>
   <li>Els punts i coma no son obligatoris, però s’acostumen a emprar.</li>
-  <li>Gràcies als punts i coma, es poden posar varies instruccions en una sola linea, encara que no és reconamable fer això
-    <h4 id="espais-en-blanc">Espais en Blanc</h4>
-  </li>
+  <li>Gràcies als punts i coma, es poden posar varies instruccions en una sola linea, encara que no és reconamable fer això</li>
+</ul>
+
+<h4 id="espais-en-blanc">Espais en Blanc</h4>
+<ul>
   <li>JS ignora espais en blanc entre operadors, operands i entre instruccions o dins dels parèntesi de les funcions.</li>
   <li>Emprarem espais en blanc per millorar la <strong>llegibilitat</strong> del codi.</li>
-  <li>Per norma general, cal evitar les línies massa llargues - més de <strong>80 linies</strong>
-    <h4 id="blocs">Blocs</h4>
-  </li>
+  <li>Per norma general, cal evitar les línies massa llargues - més de <strong>80 linies</strong></li>
+</ul>
+
+<h4 id="blocs">Blocs</h4>
+<ul>
   <li>Els blocs es defineixen entre { }</li>
   <li>Cada vegada que cream un bloc, introduirem sagnat (indentació). Un sagnat de 2 espais és suficient</li>
 </ul>
@@ -143,8 +148,9 @@
 </ul>
 
 <h2 id="4-escriptura-devents-bàsic">4. Escriptura d’events (bàsic)</h2>
-<p><a href="https://www.w3schools.com/js/js_events.asp">Font</a>
-Els events són situacions que es produeixen mentre el navegador està en marxa i que poden afectar el funcionament del script de Javascript</p>
+<p><a href="https://www.w3schools.com/js/js_events.asp">Font</a></p>
+
+<p>Els events són situacions que es produeixen mentre el navegador està en marxa i que poden afectar el funcionament del script de Javascript</p>
 
 <p>Alguns exemples d’events:</p>
 <ul>
@@ -166,16 +172,14 @@ Els events són situacions que es produeixen mentre el navegador està en marxa 
 
 <p><a href="https://www.w3schools.com/jsref/dom_obj_event.asp">Llista completa d’events DOM</a></p>
 
-<ol>
-  <li>Llocs on es pot escriure codi Javascript
-<a href="https://www.w3schools.com/js/js_whereto.asp">Font</a></li>
-</ol>
+<h2 id="5-llocs-on-es-pot-escriure-codi-javascript">5. Llocs on es pot escriure codi Javascript</h2>
+<p><a href="https://www.w3schools.com/js/js_whereto.asp">Font</a></p>
 
-<p>L’opció més directa d’escriure un script en JS és emprar les etiquetes &lt;script&gt; i &lt;/script&gt;</p>
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<p>L’opció més directa d’escriure un script en JS és emprar les etiquetes <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> i <code class="language-plaintext highlighter-rouge">&lt;/script&gt;</code></p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">demo</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">My First JavaScript</span><span class="dl">"</span>
-<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre></div></div>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
 <p>Els blocs de codi poden situar-se en molts llocs:</p>
 
 <ol>
@@ -185,8 +189,8 @@ Els events són situacions que es produeixen mentre el navegador està en marxa 
 </ol>
 
 <p>L’opció més “professional” és escriure els scripts en un arxiu extern, normalment amb extensió .js</p>
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">myScript.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre></div></div>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"myScript.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
 <p>Emprar un fitxer extern té els següents avantatges:</p>
 <ol>
   <li>Separa HTML del codi</li>
@@ -228,6 +232,7 @@ Els events són situacions que es produeixen mentre el navegador està en marxa 
 </span>
 <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">myScript1.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span></code></pre></div></div>
+
 
 
       </section>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Elements bàsics | The Monuments</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="Elements bàsics" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Pàgina amb els apunts de les meves assignatures." />
+<meta property="og:description" content="Pàgina amb els apunts de les meves assignatures." />
+<link rel="canonical" href="http://localhost:4000/basics" />
+<meta property="og:url" content="http://localhost:4000/basics" />
+<meta property="og:site_name" content="The Monuments" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/basics","description":"Pàgina amb els apunts de les meves assignatures.","headline":"Elements bàsics","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=e7802a6a7be61d4278ded8c8dabf6a287aa4ae22">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">The Monuments</a></h1>
+        
+        
+
+        <p>Pàgina amb els apunts de les meves assignatures.</p>
+
+<!--
+        
+        <p class="view"><a href="https://github.com/classicoman2/classicoman2.github.io">View thhe Project on GitHub <small>classicoman2/classicoman2.github.io</small></a></p>
+        
+-->
+        
+
+        
+      </header>
+      <section>
+
+      <h1 id="2-elements-bàsics">2 Elements bàsics</h1>
+
+<!-- toc -->
+
+<h2 id="1_sintaxi-bàsica-de-js">1_Sintaxi bàsica de JS</h2>
+<p><a href="https://www.w3schools.com/js/js_syntax.asp">Font</a></p>
+
+<p>La sintaxi de JS comprèn totes aquelles normes que estableixen com toca escriure les instruccions: com declarar variables, com assignar valors, com realitzar operacions, etc..</p>
+
+<h3 id="literals">Literals</h3>
+<ul>
+  <li>Els nombres poden tenir o no decimals. El decimal es marca amb un punt</li>
+  <li>Els strings poden escriure’s entre “ “ o entre ‘ ‘</li>
+  <li>Els booleans s’escriuen com true i false</li>
+</ul>
+
+<p>Podem assignar el literal <code class="language-plaintext highlighter-rouge">null</code> a una variable, que significa que no té valor. (Més endavant veurem quin ús té null i en quins casos ens el podem trobar)</p>
+
+<h3 id="variables">Variables</h3>
+<ul>
+  <li>Les variables són contenedors per a guardar-hi valors.</li>
+  <li>En JS, no és imprescindible declarar les variables. Els podem assignar un valor automàticament i això farà innecessària la seva declaració.</li>
+  <li>Tanmateix, és bona idea seguir el costum de declarar les variables, emprant el tradicional var (variables globals), let (variables locals) i const (ho veurem més endavant)</li>
+  <li>Algunes normes a l’hora d’escriure els noms de les variables:
+    <ul>
+      <li>JS és case sensitive, o sigui, és sensible a majúscules i una 
+variable és diferent del seu equivalent en majúscules. Un <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_syntax_case">Exemple</a></li>
+      <li>El primer caràcter d’una variable ha de ser una lletra, un underscore (_) o bé el signe de dòlar ($) (aquest darrer cas no el recoman en JS)</li>
+      <li>L’ús de guions en les variables no està permès, underscore _ en canvi, sí</li>
+      <li>És un bon costum emprar camel case per declarar variables amb 2 o més paraules, exemple: firstName, lastName, cityCode…</li>
+    </ul>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Exemple</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/classicoman2/guide_javascript/blob/master/01/variables_names.html">variables_names.html</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="operadors-i-expressions">Operadors i expressions.</h3>
+<p>Les expressions poden contenir tant variables com literals. Veurem
+més sobre operadors i expressions al proper capitol</p>
+
+<h3 id="unicode">Unicode</h3>
+<ul>
+  <li>JavaScript empra el conjunt de caràcters Unicode.</li>
+  <li>Unicode cobreix gairebé tots els caràcters i símbols existents.</li>
+</ul>
+
+<p>Per a més info, [<a href="https://www.w3schools.com/charsets/ref_html_utf8.asp">Complete Unicode Reference</a></p>
+
+<h2 id="2_comentaris-bàsic">2_Comentaris (bàsic)</h2>
+
+<p>Les maneres usuals d’escriure comentaris són:</p>
+<ul>
+  <li>Comentari unilinia a sobre d’una expressió.</li>
+  <li>Comentari unilinia a la mateixa línia.</li>
+  <li>Comentari multilinia.</li>
+</ul>
+
+<p>Apart de seguir l’estàndard <strong>JSDoc</strong> en funcions i altres construccions abstractes, només cal comentar allò que pot ajudar un altre/a programador/a a entendre com funciona el vostre codi (aquest/a programador/a podeu ser vosaltres mateixos al cap d’un temps!)</p>
+
+<p>Els comentaris són molt útils també per [prevenir l’execució d’un bocí de codi]{.ul}.</p>
+
+<p>Alerta! No abuseu dels comentaris per aquesta funcionalitat,</p>
+
+<p>podrieu acumular grans quantitats de codi inservible que dificultarien la llegibilitat del vostre codi.</p>
+
+<p>Quan entregau un codi o el penjau a un repositori, NO hi hauria</p>
+
+<p>d’haver blocs de codi anulats amb comentaris → mala llegibilitat i genera confusió</p>
+
+<h2 id="3_funcions-ul">3_Funcions [#]{.ul}</h2>
+
+<p>Una funció és un troç de codi que empra uns valors passats per paràmetre, realitza una tasca concreta i torna uns resultats</p>
+
+<p>Una funció es declara quan es defineix el seu comportament, i quan es necessita es crida o s’invoca. [Exemple]{.ul}</p>
+
+<p>Les funcions poden emprar-se múltiples vegades</p>
+
+<p>Sintaxi de la funció</p>
+<pre><code class="language-fs">function name(parameter1, parameter2, parameter3) {
+  //Code to be executed
+}
+</code></pre>
+<p>Una funció és declara amb la keyword function seguida del nom i els parèntesis</p>
+
+<p>Els noms de les funcions segueixen les mateixes normes que els [noms de les variables]{.ul}</p>
+
+<p>Puc emprar una funció maldament l’hagi declarada amb posterioritat al seu ús, gràcies al [hoisting]{.ul}:</p>
+
+<p>Exemple [function_declaration.html]{.ul}</p>
+
+<h3 id="paràmetres">Paràmetres</h3>
+<p>Dins dels parèntesis, es poden especificar cap, un o més paràmetres</p>
+
+<p>Els paràmetres, si son valors simples (integer, real, string o boolean) se passen per valor</p>
+
+<p>Els paràmetres, si son arrays o objects, se passen per referència.</p>
+
+<p>Repassa! Quina diferència hi ha entre passar per valor i passar per referència?</p>
+
+<p>Exemple [function-parameters.html]{.ul}</p>
+
+<h3 id="return">Return</h3>
+<p>Quan apareix una sentència de tipus return la funció deixa d’executar-se</p>
+
+<p>El valor de retorn pot ser un literal, una expressió o la invocació d’una altra funció</p>
+
+<p>[Exemple bàsic]{.ul} de funció que retorna</p>
+
+<h3 id="comentar-una-funció-amb-jsdoc">Comentar una funció amb JSDoc</h3>
+<p>En crear una funció, cal que la documentem emprant el format JSDoc. [Més info sobre el format JSDoc]{.ul}</p>
+
+<p>Exemple [function-commented.js]{.ul}</p>
+
+<p>Per a que es generi automàticament el format de documentació JSDocs, escriu /** a la línia immediatament superior a la declaració de la funció i espitja intro</p>
+
+<p>Més info sobre JSDoc:</p>
+
+<p>[https://javascript.info/comments]{.ul}</p>
+
+<p>[https://en.wikipedia.org/wiki/JSDoc]{.ul}</p>
+
+<h3 id="altres">Altres</h3>
+<p>Les cridades a funcions poden emprar-se en expressions, com elsliterals i variables. [Exemple]{.ul}</p>
+
+<p>En JS es poden passar funcions per paràmetre d’altres funcions.</p>
+
+
+      </section>
+      <footer>
+        
+        <p>Pàgina mantenida per <a href="https://github.com/classicoman2">classicoman2</a> &copy;</p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+  <script>
+    console.log("Prova de Javascript")
+  </script>
+</html>

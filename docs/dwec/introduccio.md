@@ -18,6 +18,7 @@ permalink: /introduccio
     + [Blocs](#blocs)
 - [3. Mostrar dades per la interfície](#3-mostrar-dades-per-la-interficie)
 - [4. Escriptura d'events (bàsic)](#4-escriptura-devents-basic)
+- [5. Llocs on es pot escriure codi Javascript](#5-llocs-on-es-pot-escriure-codi-javascript)
 
 <!-- tocstop -->
 
@@ -53,10 +54,12 @@ Per aquest curs, recomano emprar l'entorn de desenvolupament Visual Studio Code
 #### Punts i Coma
 - Els punts i coma no son obligatoris, però s'acostumen a emprar.
 - Gràcies als punts i coma, es poden posar varies instruccions en una sola linea, encara que no és reconamable fer això
+
 #### Espais en Blanc
 - JS ignora espais en blanc entre operadors, operands i entre instruccions o dins dels parèntesi de les funcions.
 - Emprarem espais en blanc per millorar la __llegibilitat__ del codi.
 - Per norma general, cal evitar les línies massa llargues - més de __80 linies__
+
 #### Blocs
 - Els blocs es defineixen entre { }
 - Cada vegada que cream un bloc, introduirem sagnat (indentació). Un sagnat de 2 espais és suficient
@@ -70,6 +73,7 @@ Per aquest curs, recomano emprar l'entorn de desenvolupament Visual Studio Code
 
 ## 4. Escriptura d'events (bàsic)
 [Font](https://www.w3schools.com/js/js_events.asp)
+
 Els events són situacions que es produeixen mentre el navegador està en marxa i que poden afectar el funcionament del script de Javascript
 
 Alguns exemples d'events:
@@ -89,11 +93,11 @@ Alguns events (que tractarem més endavant en el curs):
 
 [Llista completa d'events DOM](https://www.w3schools.com/jsref/dom_obj_event.asp)
 
-5. Llocs on es pot escriure codi Javascript
+## 5. Llocs on es pot escriure codi Javascript
 [Font](https://www.w3schools.com/js/js_whereto.asp)
 
-L'opció més directa d'escriure un script en JS és emprar les etiquetes \<script> i \</script>
-```js
+L'opció més directa d'escriure un script en JS és emprar les etiquetes `<script>` i `</script>`
+```html
 <script>
 document.getElementById("demo").innerHTML = "My First JavaScript"
 </script>
@@ -105,7 +109,7 @@ Els blocs de codi poden situar-se en molts llocs:
 3. Per evitar problemes de càrrega (que veurem més endavant en aquest apartat), es pot situar el bloc d’script entre les etiquetes `</body>`  i  `</html>`
 
 L'opció més "professional" és escriure els scripts en un arxiu extern, normalment amb extensió .js
-```js
+```html
 <script src="myScript.js"></script>
 ```
 Emprar un fitxer extern té els següents avantatges:
@@ -140,3 +144,4 @@ Exemples:
 
 <script src="myScript1.js"></script>
 ```
+

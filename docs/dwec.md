@@ -9,6 +9,7 @@ permalink: /dwec
 ## Primera Avaluació
 
 - [Introducció](./introduccio)
+- [Elements bàsics](./basics)
 
 - Nombres
 - Strings
