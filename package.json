@@ -4,7 +4,8 @@
   "description": "Pàgina web del Professor",
   "scripts": {
     "serve": "bundle exec jekyll serve",
-    "build": "bundle exec jekyll build"
+    "build": "bundle exec jekyll build",
+    "toc": "markdown-toc -i docs/dwec/regexpr.md"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/classicoman2/classicoman2.github.io/issues"
   },
-  "homepage": "https://github.com/classicoman2/classicoman2.github.io#readme"
+  "homepage": "https://github.com/classicoman2/classicoman2.github.io#readme",
+  "devDependencies": {
+    "markdown-toc": "^1.2.0"
+  }
 }

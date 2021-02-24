@@ -1,14 +1,30 @@
 ---
 layout: default
-title:  Expressions Regulars
+title: Expressions Regulars
 permalink: /regexpr
-
-#categories: jekyll update
 ---
-
 > Els exemples d&#39;aquest tutorial es troben en el repositori [guide\_javascript](https://github.com/classicoman2/guide_javascript)
 
+
+
 # 6 EXPRESSIONS REGULARS
+
+<!-- toc -->
+
+- [Materials](#materials)
+- [Expressions regulars](#expressions-regulars)
+  * [Què son](#que-son)
+  * [Taula de caràcters i metacaràcters (font: [aqui](https://regexone.com/lesson/introduction_abcs))](#taula-de-caracters-i-metacaracters-font-aquihttpsregexonecomlessonintroduction_abcs)
+    + [1.- Caràcters constants](#1--caracters-constants)
+    + [2.- Metacaràcters generals](#2--metacaracters-generals)
+    + [3.- Grups i rangs](#3--grups-i-rangs)
+    + [4.- Quantificadors](#4--quantificadors)
+    + [5.- Alternatives](#5--alternatives)
+    + [6.- Marques inici i final](#6--marques-inici-i-final)
+    + [7.- Caràcters Escapats](#7--caracters-escapats)
+- [Exercicis](#exercicis)
+
+<!-- tocstop -->
 
 ## Materials
 
@@ -21,7 +37,10 @@ Alguns Tutorials:
 - [Referència Expressions Regulars en Javacript (W3Schools)](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
 - [Regular expressions - JavaScript a MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
 - [Regular Expressions](https://eloquentjavascript.net/09_regexp.html)
+
 - [Video explicatiu molt recomanable](https://www.youtube.com/watch?v=rhzKDrUiJVk)
+
+[![IMAGE ALT TEXT](https://img.youtube.com/vi/rhzKDrUiJVk/0.jpg)](https://www.youtube.com/watch?v=rhzKDrUiJVk "Video Title")
 
 ## Expressions regulars
 
@@ -97,4 +116,5 @@ Intenta resoldre els exercicis d&#39;aquesta [pàgina web](https://regexone.com/
 Veurem que hi ha sempre unes quantes solucions possibles, es tracta de trobar sempre la més _precisa._
 
 **Proposta nadalenca:** Proposa solucions a cada exercici en les caselles d&#39;aquest [full de càlcul](https://docs.google.com/spreadsheets/d/1vxq-v95BA-DvFWVSmcBJaYME5xxFvuGJyqoPmOOpahU/edit#gid=0)
+
 

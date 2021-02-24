@@ -5,8 +5,7 @@ permalink: /
 ---
 
 # Benvinguts a "The Monuments"
-Aquesta és la pàgina de ... 
+Aquesta és la pàgina amb els apunts de les següents assignatures:
 
-## Pàgines
-- [DWEC](./dwec)
-- [DIW](./diw)
+- [Desenvolupament Web en Entorn Client](./dwec)
+- [Design of Web Interfaces](./diw)

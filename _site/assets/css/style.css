@@ -212,12 +212,17 @@ footer { width: 270px; float: left; position: fixed; bottom: 50px; -webkit-font-
   header ul { width: 99%; }
   header li, header ul li + li + li { width: 33%; } }
 @media print { body { padding: 0.4in; font-size: 12pt; color: #444; } }
-*, body { font-size: 1rem; }
+* { font-size: 1rem; }
 
-.wrapper { display: flex; flex-direction: column; }
+body { padding: 0px; margin: 0; }
 
-header { display: block; width: auto; position: inherit; background-color: lightgray; }
+.wrapper header, .wrapper footer { display: block; position: inherit; background-color: #f0ae34; width: auto; padding: 10px 15px; }
 
-section { width: auto; margin-top: 40px; }
+.wrapper { width: auto; display: flex; flex-direction: column; padding-left: 0px; }
+.wrapper section { width: auto; padding: 10px 15px; margin-top: 40px; }
 
-footer { position: inherit; background-color: lightgray; }
+h2 { font-size: 1.2em; }
+
+p { line-height: 0.9em; }
+
+li { line-height: 1.8em; }

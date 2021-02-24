@@ -3,27 +3,52 @@
 
 @import "{{ site.theme }}";
 
-*,
-body {
+
+$color_primary: rgb(240, 174, 52);
+
+* {
   font-size: 1rem;
 }
+
+body {
+  padding: 0px;
+  margin: 0;
+}
+
+%header_and_footer {
+  display: block;
+  position: inherit;
+  background-color: $color_primary;
+  width: auto;
+  padding: 10px 15px;
+}
+
 .wrapper {
+  width: auto;
   display: flex;
   flex-direction: column;
-}
-
-header {
-  display: block;
-  width: auto;
-  position: inherit;
-  background-color: lightgray;
-}
-
-section {
+  padding-left: 0px;
+  header {
+    @extend %header_and_footer;
+  }
+  section {
     width: auto;
-    margin-top:40px;
+    padding: 10px 15px;
+    margin-top: 40px;
+  }
+  footer {
+    @extend %header_and_footer;
+  }
 }
-footer {
-  position: inherit;
-  background-color: lightgray;
+
+h2 {
+  font-size: 1.2em;
+}
+
+p {
+  line-height: 0.9em;
+}
+
+li {
+  line-height: 1.8em;
 }
