@@ -3,11 +3,8 @@ layout: default
 title: Expressions Regulars
 permalink: /regexpr
 ---
-> Els exemples d&#39;aquest tutorial es troben en el repositori [guide\_javascript](https://github.com/classicoman2/guide_javascript)
 
-
-
-# 6 EXPRESSIONS REGULARS
+# EXPRESSIONS REGULARS
 
 <!-- toc -->
 
