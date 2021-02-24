@@ -1,5 +1,7 @@
 ---
 layout: default
-title: About
-permalink: /
+title: DIW
+permalink: /diw
 ---
+
+# Design of Web Interfaces

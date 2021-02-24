@@ -19,5 +19,6 @@
   "homepage": "https://github.com/classicoman2/classicoman2.github.io#readme",
   "devDependencies": {
     "markdown-toc": "^1.2.0"
-  }
+  },
+  "dependencies": {}
 }
