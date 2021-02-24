@@ -1,9 +1,11 @@
 ---
-layout: page
+layout: default
 title: About
 permalink: /about/
-nav_order: 3
 ---
+
+# About
+
 En aquesta pàgina trobaràs apunts d'alguns mòduls del Grau Superior en Desenvolupament d'Aplicacions Web.
 
 This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)

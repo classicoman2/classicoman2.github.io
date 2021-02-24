@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>The Monuments | Pàgina amb els apunts de les meves assignatures.</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="The Monuments" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Pàgina amb els apunts de les meves assignatures." />
+<meta property="og:description" content="Pàgina amb els apunts de les meves assignatures." />
+<link rel="canonical" href="http://localhost:4000/docs/dwec/bulk-3-3.html" />
+<meta property="og:url" content="http://localhost:4000/docs/dwec/bulk-3-3.html" />
+<meta property="og:site_name" content="The Monuments" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/docs/dwec/bulk-3-3.html","description":"Pàgina amb els apunts de les meves assignatures.","headline":"The Monuments","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=e7802a6a7be61d4278ded8c8dabf6a287aa4ae22">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">The Monuments</a></h1>
+        
+        
+
+        <p>Pàgina amb els apunts de les meves assignatures.</p>
+
+<!--
+        
+        <p class="view"><a href="https://github.com/classicoman2/classicoman2.github.io">View thhe Project on GitHub <small>classicoman2/classicoman2.github.io</small></a></p>
+        
+-->
+        
+
+        
+      </header>
+      <section>
+
+      <p>| Els exemples d'aquest tutorial es troben en el repositori <a href="https://github.com/classicoman2/guide_javascript">guide_javascript</a> |
+| — |</p>
+
+<p>#</p>
+
+<h1 id="083_js-asincron-iii-rest-api">08.3_JS Asincron (III): Rest API</h1>
+
+<h3 id="què-és-una-rest-api">Què és una Rest API</h3>
+
+<p>Vídeos introductoris:</p>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=SLwpqD8n3d0">What is a REST API? (6')</a></li>
+  <li><a href="https://www.youtube.com/watch?v=6sUbt-Qp6Pg">What is REST? (3')</a></li>
+</ul>
+
+<h3 id="http-requests">HTTP Requests</h3>
+
+<h4 id="5-peticions-habituals">5 peticions habituals</h4>
+
+<p>Anem a repassar els 5 + 1 tipus de peticions HTTP que puc fer a una REST API.</p>
+
+<ul>
+  <li>Webgrafia: <a href="https://jsonplaceholder.typicode.com/guide/">JSONPlaceholder - Guide</a></li>
+  <li>Exemples: <a href="https://github.com/classicoman2/fake-Rest-API-local-CRUD">https://github.com/classicoman2/fake-Rest-API-local-CRUD</a></li>
+</ul>
+
+<h5 id="get-all">GET all</h5>
+
+<p>fetch('https://jsonplaceholder.typicode.com/posts')</p>
+
+<p>.then(response =\&gt; response.json())</p>
+
+<p>.then(json =\&gt; console.log(json))</p>
+
+<p><em>// Output</em></p>
+
+<p>[</p>
+
+<p>{ id: 1, title: '[…]'<em>/* … */</em> },</p>
+
+<p><em>/* … */</em></p>
+
+<p>{ id: 100, title: '[…]'<em>/* … */</em> }</p>
+
+<p>]</p>
+
+<h5 id="get-one">GET one</h5>
+
+<p>fetch('https://jsonplaceholder.typicode.com/posts/1')</p>
+
+<p>.then(response =\&gt; response.json())</p>
+
+<p>.then(json =\&gt; console.log(json))</p>
+
+<p><em>// Output</em></p>
+
+<p>{</p>
+
+<p>id: 1,</p>
+
+<p>title: '[…]',</p>
+
+<p>body: '[…]',</p>
+
+<p>userId: 43987654</p>
+
+<p>}</p>
+
+<h5 id="post-create-one">POST: Create one</h5>
+
+<p>LA API Rest afegirà un camp id a dins de l'objecte creat.</p>
+
+<p>En aquest exemple, afegeix l'identificador <strong>104</strong>.</p>
+
+<p>A l'igual que en la taula d'una base de dades, tots els registres han de tenir un identificador diferent.</p>
+
+<p>fetch( <strong>'https://jsonplaceholder.typicode.com/posts</strong>', {</p>
+
+<p>method: <strong>'POST'</strong> ,</p>
+
+<p>body: JSON.stringify({</p>
+
+<p>title: 'foo',</p>
+
+<p>body: 'bar',</p>
+
+<p>userId: 43987654</p>
+
+<p>}),</p>
+
+<p>headers: {</p>
+
+<p>"Content-type": "application/json; charset=UTF-8"</p>
+
+<p>}</p>
+
+<p>})</p>
+
+<p>.then(response =\&gt; response.json())</p>
+
+<p>.then(json =\&gt; console.log(json))</p>
+
+<p><em>// Output</em></p>
+
+<p>{</p>
+
+<p><strong>id:</strong>  <strong>101</strong>** ,**</p>
+
+<p>title: 'foo',</p>
+
+<p>body: 'bar',</p>
+
+<p>userId: 43987654</p>
+
+<p>}</p>
+
+<h5 id="delete-one">DELETE one</h5>
+
+<p>fetch('https://jsonplaceholder.typicode.com/posts/1', {</p>
+
+<p>method: 'DELETE'</p>
+
+<p>})</p>
+
+<h5 id="put-update-a-resource-sencer">PUT: Update a resource (sencer)</h5>
+
+<p>Per modificar el registre amb el identificador 5 , de manera que s'esborrin les seves propietats i se substitueixin per les que li passo,</p>
+
+<p>fetch('https://jsonplaceholder.typicode.com/posts/5', {</p>
+
+<p>method: 'PUT',</p>
+
+<p>body: JSON.stringify({</p>
+
+<p>title: 'foo',</p>
+
+<p>body: 'bar',</p>
+
+<p>userId: 43987654</p>
+
+<p>}),</p>
+
+<p>headers: {</p>
+
+<p>"Content-type": "application/json; charset=UTF-8"</p>
+
+<p>}</p>
+
+<p>})</p>
+
+<p>.then(response =\&gt; response.json())</p>
+
+<p>.then(json =\&gt; console.log(json))</p>
+
+<p><em>// Output</em></p>
+
+<p>{</p>
+
+<p>id: 5,</p>
+
+<p>title: 'foo',</p>
+
+<p>body: 'bar',</p>
+
+<p>userId: 43987654</p>
+
+<p>}</p>
+
+<h4 id="patch">Patch</h4>
+
+<p>A les operacions anteriors, li podem afegir PATCH.</p>
+
+<p>PATCH permet modificar un recurs, però a diferència de <strong>PUT,</strong> amb PATCH se substitueixen <strong>només</strong> els valors de les propietats indicades, no totes les propietats dels objectes.</p>
+
+<p>fetch('https://jsonplaceholder.typicode.com/posts/5', {</p>
+
+<p>method: 'PATCH',</p>
+
+<p>body: JSON.stringify({</p>
+
+<p>title: 'nou titol',</p>
+
+<p>body: 'bar',</p>
+
+<p>userId: 43987654</p>
+
+<p>}),</p>
+
+<p>headers: {</p>
+
+<p>"Content-type": "application/json; charset=UTF-8"</p>
+
+<p>}</p>
+
+<p>})</p>
+
+<p>.then(response =\&gt; response.json())</p>
+
+<p>.then(json =\&gt; console.log(json))</p>
+
+<p><em>// Output</em></p>
+
+<p>{</p>
+
+<p>id: 5,</p>
+
+<p>title: 'foo',</p>
+
+<p>body: 'bar',</p>
+
+<p>userId: 43987654</p>
+
+<p>}</p>
+
+<h3 id="autenticació">Autenticació</h3>
+
+<p>Falta</p>
+
+<ul>
+  <li>Autenticació</li>
+  <li>Peticions amb TOKEN per comprovar si tenc o no permis per fer aquestes operacions) -\&gt; el token l'he d'haver aconseguit a l'autenticació !!</li>
+</ul>
+
+<p>#</p>
+
+<h1 id="9---jquery-fora-temari">9 - JQUERY (FORA TEMARI)</h1>
+
+<h2 id="1--getting-started">1.- Getting Started</h2>
+
+<h3 id="11-introducció">1.1.-Introducció</h3>
+
+<p>The purpose of jQuery is to make it much easier to use JavaScript on your website.</p>
+
+<h3 id="primer-exemple-amb-js"><strong>Primer exemple amb JS</strong></h3>
+
+<p><a href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_hide">https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_hide</a></p>
+
+<p>A favor</p>
+
+<ul>
+  <li>jQuery is a lightweight, " <strong>write less, do more</strong>", JavaScript library.</li>
+  <li>jQuery also simplifies a lot of the complicated things from JavaScript, like <strong>AJAX</strong> calls and <strong>DOM</strong> manipulation.</li>
+  <li>Will jQuery work in <strong>all browsers</strong>? → The jQuery team have written the jQuery library to run the same in all major browsers</li>
+</ul>
+
+<p>En contra</p>
+
+<ul>
+  <li>Sobrecàrrega</li>
+  <li>Molts de cops, no aporta res de nou que no se pugui fer amb <a href="http://vanilla-js.com/">Vanilla JS</a></li>
+</ul>
+
+<p>The jQuery library contains the following features:</p>
+
+<ol>
+  <li>HTML/DOM manipulation</li>
+  <li>CSS manipulation</li>
+  <li>HTML event methods</li>
+  <li>Effects and animations</li>
+  <li>AJAX</li>
+  <li>Utilities</li>
+</ol>
+
+<h3 id="exercicis-test-de-repàs-de-jquery"><strong>Exercicis test de Repàs de JQuery</strong></h3>
+
+<p><a href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_selectors1">Comprova el teu nivell de JQuery</a> en qualsevol moment durant aquest curs!</p>
+
+<h3 id="exemples-de-jquery"><strong>Exemples de JQuery</strong></h3>
+
+<p><a href="https://www.w3schools.com/jquery/jquery_examples.asp">https://www.w3schools.com/jquery/jquery_examples.asp</a></p>
+
+<h3 id="referència-de-jquery"><strong>Referència de JQuery</strong></h3>
+
+<p><a href="https://www.w3schools.com/jquery/jquery_ref_overview.asp">https://www.w3schools.com/jquery/jquery_ref_overview.asp</a></p>
+
+<h3 id="12--download--cdn">1.2.- Download / CDN</h3>
+
+<p>Pots emprar 2 versions:</p>
+
+<ul>
+  <li>Production version</li>
+  <li>Development version → this is for testing and development (uncompressed and readable code)</li>
+</ul>
+
+<p><a href="https://www.w3schools.com/jquery/jquery_get_started.asp">https://www.w3schools.com/jquery/jquery_get_started.asp</a></p>
+
+<h3 id="download"><strong>Download</strong></h3>
+
+<p><a href="https://jquery.com/download/#downloading-jquery">https://jquery.com/download/#downloading-jquery</a></p>
+
+<h3 id="cdn"><strong>CDN</strong></h3>
+
+<p><a href="https://code.jquery.com/">https://code.jquery.com/</a></p>
+
+<h2 id="2--jquery-elemental">2.- JQuery elemental</h2>
+
+<h3 id="21--sintaxi">2.1.- Sintaxi</h3>
+
+<p><a href="https://www.w3schools.com/jquery/jquery_syntax.asp">Aquí</a> ens explica la sintaxi bàsica de JQuery</p>
+
+<h3 id="-molt-important---levent-document-ready"><strong>*** MOLT IMPORTANT ***</strong>** : L'event "Document Ready"**</h3>
+
+<p>Tots els exemples de JQuery que veuràs en aquest tutorial i el tutorial de W3Schools estan a dins d'aquest mètode:</p>
+
+<p>$(document).ready(function(){</p>
+
+<p>// jQuery methods go here…</p>
+
+<p>});</p>
+
+<p>Això és per evitar que JQuery s'executi abans que el document web s'hagi carregat del tot i estigui preparat el DOM, com se'ns indica a la <a href="https://api.jquery.com/ready/">guia oficial de JQuery</a></p>
+
+<h3 id="22-selectors-a-jquery">2.2.-Selectors a JQuery</h3>
+
+<p>jQuery selectors allow you to select and manipulate HTML element(s).</p>
+
+<p>They allow you to select HTML elements based on their name, id, classes, types, attributes, values of attributes and much more. It's based on the existing <strong>CSS Selectors</strong> , and in addition, it has some own custom selectors.</p>
+
+<p>All selectors in jQuery start with the dollar sign and parentheses: $()</p>
+
+<p><a href="https://www.w3schools.com/jquery/jquery_selectors.asp">En aquesta pàgina, mirar-ho tot</a></p>
+
+<ul>
+  <li>Com emprar els selectors</li>
+  <li>Com incloure funcions JQuery en una pàgina diferent</li>
+</ul>
+
+<p><a href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_selectors1">Alguns exercicis</a></p>
+
+<h3 id="23--events-a-jquery">2.3.- Events a JQuery</h3>
+
+<p>Aquí tenim una explicació molt clara sobre la manera en la què recomano treballar amb events.</p>
+
+<p><a href="https://www.w3schools.com/jquery/jquery_events.asp">https://www.w3schools.com/jquery/jquery_events.asp</a></p>
+
+<p>Està molt més clar que amb Javascript!</p>
+
+<h2 id="3--efectes-i-animacions-callbacks">3.- Efectes i Animacions. Callbacks</h2>
+
+<p>Comença: <a href="https://www.w3schools.com/jquery/jquery_fade.asp">aqui</a></p>
+
+<h3 id="fade-i-slide">Fade i Slide</h3>
+
+<h4 id="fade-">Fade <a href="https://www.w3schools.com/jquery/jquery_fade.asp">#</a></h4>
+
+<ul>
+  <li>fadeOut() <em>difumina un element</em></li>
+  <li>fadeIn() <em>el contrari de l'anterior</em></li>
+  <li>fadeToggle() <em>alterna entre un efecte i un altre</em></li>
+  <li>fadeTo() <em>fins un determinat valor d'opacitat</em></li>
+</ul>
+
+<h4 id="slide-">Slide <a href="https://www.w3schools.com/jquery/jquery_slide.asp">#</a></h4>
+
+<ul>
+  <li>slideDown() efecte desplegament cap a sota d'un element ocult</li>
+  <li>slideUp() <em>efecte plegament cap amunt d'un element visible</em></li>
+  <li>slideToggle() <em>alterna entre un efecte i un altre</em></li>
+</ul>
+
+<h3 id="callbacks">Callbacks</h3>
+
+<p>A totes aquestes funcions anteriors se'ls hi pot passar una <strong>funció callback</strong> que s'executaria quan acabi l'animació.</p>
+
+<p><a href="https://jsfiddle.net/aamengual/0q6Ltayv/18/">En aquest exemple</a>, en acabar l'efecte (que dura 3 segons), s'executa un alert()</p>
+
+<p>Més info sobre efectes i callbacks: <a href="https://www.w3schools.com/jquery/jquery_callback.asp">https://www.w3schools.com/jquery/jquery_callback.asp</a></p>
+
+<h3 id="animacions">Animacions</h3>
+
+<h4 id="animations-">Animations <a href="https://www.w3schools.com/jquery/jquery_animate.asp">#</a></h4>
+
+<p>Podem emprar el mètode animate() per a…</p>
+
+<ul>
+  <li>Fer una animació simple</li>
+  <li>Animació amb múltiples propietats
+    <ul>
+      <li>Se poden animar gairebé totes les propietats de CSS !</li>
+    </ul>
+  </li>
+  <li>Amb valors relatius</li>
+  <li>Amb valors predefinits</li>
+  <li>Encadenant vàries animacions amb <em>Queue Functionality</em></li>
+</ul>
+
+<p><a href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_animate1">Exercicis simples…</a></p>
+
+<h4 id="stop">Stop</h4>
+
+<p><a href="https://www.w3schools.com/jquery/jquery_stop.asp">https://www.w3schools.com/jquery/jquery_stop.asp</a></p>
+
+<p>La funció stop() permet aturar l'animació d'un <em>Efecte</em></p>
+
+<h2 id="4--jquery-chaining">4.- JQuery Chaining</h2>
+
+<p><a href="https://www.w3schools.com/jquery/jquery_chaining.asp">https://www.w3schools.com/jquery/jquery_chaining.asp</a></p>
+
+<p>Molt simple. Executar una instrucció JQuery, sigui un efecte, un canvi de format, etc.. darrere d'un altra instrucció, així vàries instruccions sense límit aparent.</p>
+
+<p>#</p>
+
+<h1 id="10---frameworks-vuejs">10 - Frameworks: Vue.JS</h1>
+
+<p><a href="https://docs.google.com/document/d/1dmP-TEw7n8rdKwWKhng9zRzHm4u11mBH1wK7P2a6U_I/edit#heading=h.vi06grfap0ug">Enllaç a Guia Vue.js (en construcció)</a></p>
+
+<h1 id="apèndix">APÈNDIX</h1>
+
+<h2 id="bibliografia-i-webgrafia">BIBLIOGRAFIA I WEBGRAFIA</h2>
+
+<ul>
+  <li><a href="https://www.w3schools.com/jsref/default.asp."><strong>JS Tutorial de W3Schools</strong></a>
+    <ul>
+      <li>Aquests apunts estan basats sobretot en aquest tutorial. D'aqui s'han extret la majoria de conceptes i alguns exemples</li>
+      <li>Conté explicacions (en anglès) dels principals aspectes de Javascript i multitud d'exemples que es poden modificar i provar en línia.</li>
+      <li>Maldament està desactualitzat en alguns aspectes, és una guia molt útil per aprendre la gran majoria dels conceptes que necessites dominar per programar amb JS</li>
+    </ul>
+  </li>
+  <li><a href="https://www.w3schools.com/jsref/default.asp"><strong>Referència de Javascript i DOM a W3Schools</strong></a>
+    <ul>
+      <li>Una referència completa de JS organitzada per temàtiques</li>
+      <li>Serveix com a complement a l'anterior tutorial</li>
+    </ul>
+  </li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><strong>Javascript tutorial - MDN Web Docs</strong></a>
+    <ul>
+      <li>Tutorial molt complet, que he emprat per consultat unes quantes coses que no se troben en el tutorial de W3Schools i per actualitzar alguns conceptes</li>
+      <li>Existeix una versió en castellà (però no per totes les pàgines)</li>
+    </ul>
+  </li>
+</ul>
+
+
+      </section>
+      <footer>
+        
+        <p>Pàgina mantenida per <a href="https://github.com/classicoman2">classicoman2</a> &copy;</p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+  <script>
+    console.log("Prova de Javascript")
+  </script>
+</html>
